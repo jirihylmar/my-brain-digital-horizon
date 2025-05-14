@@ -66,7 +66,7 @@ git config --global user.email "your.email@example.com"
 Run the environment check script:
 
 ```bash
-bash system_tools/setup/check_environment.sh
+bash ~/Documents/my-brain-digital-horizon/system_tools/check_environment.sh
 ```
 
 ## Working with the Repository

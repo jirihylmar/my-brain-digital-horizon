@@ -72,5 +72,6 @@ log.txt
 tmp/
 temp/
 
-# Student workspace (if you want individual student files excluded)
-# student-workspace/personal-*/
+# Icon error
+Icon?
+Icon\r

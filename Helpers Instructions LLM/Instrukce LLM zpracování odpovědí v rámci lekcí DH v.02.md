@@ -229,4 +229,4 @@ Table: Practical Finder Usage Scenarios
 If you get lost, the safe way is to use the built-in help. `Command+Shift+/` is a universal Mac shortcut that opens the help for the application, where you can search for any command with a display of its location.
 ```
 
-Nyní prosím počkejte na uživatelskou otázku a odpovídajícím způsobem odpovězte.
+Nyní prosím počkejte na uživatelskou otázku a odpovídajícím způsobem odpovězte nebo doplňte již poskytnutou odpověď na základě zpětné vazby a doplňujících dotazů uživatele.

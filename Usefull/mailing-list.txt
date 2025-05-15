@@ -1,0 +1,42 @@
+Dopoledne
+
+atanasova@brainmarket.cz, boskovicova@brainmarket.cz, haluskova@brainmarket.cz, haluzikova@brainmarket.cz, hegrova@brainmarket.cz, hyza@brainmarket.cz, julina@brainmarket.de, mlkvikova@brainmarket.cz, packova@brainmarket.cz, sagnerova@brainmarket.cz, sykorova@brainmarket.cz, tomeckova@brainmarket.cz, trlifajova@brainmarket.cz, vamos@brainmarket.cz, yonash@brainmarket.cz
+
+Odpoledne
+
+babisova@brainmarket.cz, bortlikova@brainmarket.cz, cerny@brainmarket.cz, hammer@brainmarket.cz, kolarz@brainmarket.pl, koudelka@brainmarket.cz, kozubkova@brainmarket.cz, liskova@brainmarket.cz, senk@brainmarket.cz, simaskova@brainmarket.cz, smailova@brainmarket.cz, soumarova@brainmarket.cz, stepanek@brainmarket.cz, vesely@brainmarket.cz
+
+# Týmy
+
+Tým expanzí prodeje
+
+atanasova@brainmarket.cz, bednarz@brainmarket.cz, julina@brainmarket.de, kolarz@brainmarket.pl, liskova@brainmarket.cz
+
+Tým financí
+
+boskovicova@brainmarket.cz, cerny@brainmarket.cz, hyza@brainmarket.cz, vamos@brainmarket.cz, vesely@brainmarket.cz
+
+Tým lidských zdrojů
+
+smailova@brainmarket.cz, trlifajova@brainmarket.cz
+
+Tým marketingu
+
+babisova@brainmarket.cz, haluskova@brainmarket.cz, hammer@brainmarket.cz, kozubkova@brainmarket.cz, packova@brainmarket.cz, stepanek@brainmarket.cz
+
+Tým nákupu
+
+admakovic@brainmarket.cz, hegrova@brainmarket.cz, koudelka@brainmarket.cz, sagnerova@brainmarket.cz, yonash@brainmarket.cz
+
+Tým výroby
+
+senk@brainmarket.cz, sykorova@brainmarket.cz, tomeckova@brainmarket.cz
+
+Tým zákaznické podpory
+
+bortlikova@brainmarket.cz, haluzikova@brainmarket.cz, kasik@brainmarket.cz, mlkvikova@brainmarket.cz, simaskova@brainmarket.cz, soumarova@brainmarket.cz
+
+Tým řízení projektů
+
+jiri.hylmar@gmail.com, luko26@gmail.com, service@d4m.tech, vesely@brainmarket.cz
+

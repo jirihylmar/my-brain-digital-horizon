@@ -9,10 +9,8 @@ my-brain-digital-horizon/
 ├── README.md                     # Main documentation
 ├── LICENSE                       # Repository license
 ├── Files Samples/                # READ ONLY Collection of various file formats for testing
-├── Files Tests/                  # Your working area for file tests
-├── Helpers Answers/              # Reference guides and cheatsheets
-├── Helpers Instructions LLM/     # LLM processing instructions
-├── Sessions My Notes/            # Area for your personal notes
+├── WORKSPACE/                    # Your working area for working and testing
+├── Assistants/                   # LLM processing instructions and answers
 ├── system_scripts/               # READ ONLY Example scripts in different languages
 └── system_tools/                 # READ ONLY Tools and verification utilities
 ```

@@ -9,10 +9,8 @@ my-brain-digital-horizon/
 ├── README.md                     # Hlavní dokumentace
 ├── LICENSE                       # Licence repozitáře
 ├── Files Samples/                # POUZE KE ČTENÍ Kolekce různých formátů souborů pro testování
-├── Files Tests/                  # Vaše pracovní oblast pro testování souborů
-├── Helpers Answers/              # Referenční příručky a přehledové listy
-├── Helpers Instructions LLM/     # Instrukce pro zpracování pomocí LLM
-├── Sessions My Notes/            # Oblast pro vaše osobní poznámky
+├── WORKSPACE/                    # Vaše pracovní oblast pro práci a testy
+├── Assistants/                   # Instrukce a odpovědi pro zpracování pomocí LLM
 ├── system_scripts/               # POUZE KE ČTENÍ Ukázkové skripty v různých jazycích
 └── system_tools/                 # POUZE KE ČTENÍ Nástroje a ověřovací utility
 ```

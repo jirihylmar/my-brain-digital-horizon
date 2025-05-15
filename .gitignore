@@ -72,6 +72,14 @@ log.txt
 tmp/
 temp/
 
-# Icon error
+# Mac system files
+Icon
 Icon?
-Icon\r
+Icon[\r]
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

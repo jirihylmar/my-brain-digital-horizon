@@ -1,5 +1,18 @@
 ## Using Your Saved Documents Search
 
+```yaml
+Author: :person_jirihylmar
+Updated: 2025-05-14T07:39:50Z
+Purpose:
+- Guide on how to limit Finder searches to only search within the Documents folder
+Keywords:
+- macOS
+- Finder
+- search location
+- Documents folder
+- file management
+```
+
 Table: Benefits of the Saved Documents Search
 
 | Benefit | Description |
@@ -14,19 +27,6 @@ Table: Benefits of the Saved Documents Search
 1. ⌘ + F = Start a search in the current Finder window
 2. ⌘ + , = Open Finder Settings
 3. ⌘ + Option + Space = Open Spotlight search# Limiting Finder Search to Documents Folder
-
-```yaml
-Author: :person_jirihylmar
-Updated: 2025-05-14T07:39:50Z
-Purpose:
-- Guide on how to limit Finder searches to only search within the Documents folder
-Keywords:
-- macOS
-- Finder
-- search location
-- Documents folder
-- file management
-```
 
 ## Limiting Search to the Documents Folder
 

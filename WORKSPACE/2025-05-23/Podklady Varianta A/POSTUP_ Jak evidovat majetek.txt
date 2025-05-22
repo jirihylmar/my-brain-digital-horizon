@@ -1,0 +1,83 @@
+POSTUP - NÁKUP A EVIDENCE
+
+Potřeba nového majetku - definice předmětu a jeho užitku
+Nákup technologického majetku obstarává Marek Tomíček (např. Alza)
+
+Nakoupený majetek se zaeviduje v HR Systému do příslušného šanonu v ALVENO:
+
+ROZDĚLENÍ MAJETKU V ŠANONU:
+Auta
+Další IT vybavení - kamera, tiskárna, Platební terminál, Čtečka čárových kódů, Tiskárna štítků, Tablet, Dokovací stanice pro platební terminál, Dotyková pokladna, Tiskárna účtenek, Laminátor
+Karty - platební karty
+Klíče
+Mobilní telefony - mobilní telefony, SIM karty
+Monitory a televize
+Notebooky
+Počítače a All In One - iMac, PC, All In One (počítače)
+PDA
+Klávesnice
+Myš
+Sluchátka
+
+KLIK na vybraný šanon ➡️ Přidat nový záznam
+
+Vyplnit náležité informace majetku:
+
+Vždy je potřeba přidělit majetku NOVÉ INVENTÁRNÍ ČÍSLO, 
+které je volné (bílé = nezvýrazněné) z následující tabulky:
+<
+Vybrané inventární číslo nutno v tabulce zvýraznit (růžovou barvou), aby bylo patrné, že je již obsazené (přiřazeno k majetku).
+PC-25-0001 ➡️ PC-25-0001
+
+
+Informace o majetku
+Název: iMac 24” ( M1, 2021)
+Sériové číslo: 
+Inventární číslo: PC-25-0001
+Místo umístění: kde bude majetek umístěn (výběr z nabídky)
+
+Fakturace a záruka
+Datum pořízení:
+Datum konce záruky:
+Faktura a záruční list: vložit Přílohu - fakturu zboží (majetku)
+
+Informace o svěření
+Komu je “majetek” svěřen:
+Přidat do osobního spisu: “zazelenat”, pokud je majetek přiřazen konkrétní osobě.
+Jméno konkrétní osoby vypsat do kolonky “Komu je xy svěřen”.
+
+Pokud majetek není přiřazen konkrétní osobě, napíše se do kolonky “Známky opotřebení” - místo, kde se majetek nachází (např. kutloch/výrobna/kancelář X)
+
+Stav majetku při předání: nový/použitý
+
+
+ULOŽIT
+
+
+Štítkování majetku:
+Na majetek se nalepí přidělené INVENTÁRNÍ ČÍSLO (např.  PC-25-0001)
+
+
+Tisk štítků s inventárním číslem - pomocí tiskárny Brother
+
+Na PC/notebooku otevřu aplikaci Brother P-touch Editor.
+Klik “New”
+Na štítek vložit “Bar Code” - CODE128 - vložit kód/inventární číslo, které chci tisknout.
+
+Hromadný tisk inventárních štítků:
+V excelu vytvořím tabulku neboli seznam inventárních čísel, které chci vytisknout.
+Vytvořenou tabulku stáhnout jako .csv.
+
+Database - Open - Browse.. Nahrát stáhnutou tabulku .csv - Open
+
+Přetáhnu sloupec, který chci vytisknout do “Bar Code”. 
+
+V levé části programu Brother P-touch Editor lze upravit šířku a výšku štítku.
+
+Označím ve sloupci (např. F1) kódy/čísla, které je potřeba vytisknout.
+PC/Notebook je nutno propojit pomocí Wi-Fi s tiskárnou Brother.
+Print - VYTISKNU ŠTÍTKY.
+Předávací protokol 
+
+Alveno / Zaměstnanci / “Jméno” / Dokumenty
+

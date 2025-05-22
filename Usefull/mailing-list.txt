@@ -1,10 +1,10 @@
 Dopoledne
 
-atanasova@brainmarket.cz, bednarz@brainmarket.cz, boskovicova@brainmarket.cz, haluskova@brainmarket.cz, haluzikova@brainmarket.cz, hegrova@brainmarket.cz, hyza@brainmarket.cz, julina@brainmarket.de, mlkvikova@brainmarket.cz, packova@brainmarket.cz, sagnerova@brainmarket.cz, sykorova@brainmarket.cz, tomeckova@brainmarket.cz, trlifajova@brainmarket.cz, vamos@brainmarket.cz, yonash@brainmarket.cz
+atanasova@brainmarket.cz, bednarz@brainmarket.cz, boskovicova@brainmarket.cz, haluskova@brainmarket.cz, haluzikova@brainmarket.cz, hegrova@brainmarket.cz, hyza@brainmarket.cz, julina@brainmarket.de, kasik@brainmarket.cz, mlkvikova@brainmarket.cz, packova@brainmarket.cz, sagnerova@brainmarket.cz, sykorova@brainmarket.cz, tomeckova@brainmarket.cz, trlifajova@brainmarket.cz, vamos@brainmarket.cz, yonash@brainmarket.cz
 
 Odpoledne
 
-babisova@brainmarket.cz, bortlikova@brainmarket.cz, cerny@brainmarket.cz, hammer@brainmarket.cz, kolarz@brainmarket.pl, koudelka@brainmarket.cz, kozubkova@brainmarket.cz, liskova@brainmarket.cz, senk@brainmarket.cz, simaskova@brainmarket.cz, smailova@brainmarket.cz, soumarova@brainmarket.cz, stepanek@brainmarket.cz, vesely@brainmarket.cz
+admakovic@brainmarket.cz, babisova@brainmarket.cz, bortlikova@brainmarket.cz, cerny@brainmarket.cz, forman@brainmarket.cz, hammer@brainmarket.cz, hlad@brainmarket.cz, kolarz@brainmarket.pl, koudelka@brainmarket.cz, kozubkova@brainmarket.cz, liskova@brainmarket.cz, senk@brainmarket.cz, simaskova@brainmarket.cz, smailova@brainmarket.cz, soumarova@brainmarket.cz, stepanek@brainmarket.cz, vesely@brainmarket.cz
 
 # Týmy
 
@@ -26,7 +26,7 @@ babisova@brainmarket.cz, haluskova@brainmarket.cz, hammer@brainmarket.cz, kozubk
 
 Tým nákupu
 
-admakovic@brainmarket.cz, hegrova@brainmarket.cz, koudelka@brainmarket.cz, sagnerova@brainmarket.cz, yonash@brainmarket.cz
+admakovic@brainmarket.cz, forman@brainmarket.cz, hegrova@brainmarket.cz, hlad@brainmarket.cz, koudelka@brainmarket.cz, sagnerova@brainmarket.cz, yonash@brainmarket.cz
 
 Tým výroby
 

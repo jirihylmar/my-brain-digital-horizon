@@ -2,15 +2,17 @@
 
 ```yaml
 Author: :person_jirihylmar
-Updated: 2025-05-14T07:39:50Z
+Updated: 2025-05-26T00:00:00Z
 Purpose:
 - Simple Git workflow overview for feature development using branches
+- Repository initialization and setup
 Keywords:
 - GitHub
 - Git
 - commands
 - workflow
 - branches
+- repository setup
 ```
 
 ## Quick Reference
@@ -18,6 +20,21 @@ Keywords:
 ```bash
 git add .; git commit -m "update"; git push
 ```
+
+## Creating a GitHub Repository from Existing Folder Using GitHub Website
+
+Table: Manual repository setup
+
+| Step | Command/Action |
+|------|----------------|
+| 1. Local setup | `git init` |
+| 2. Stage files | `git add .` |
+| 3. First commit | `git commit -m "Initial commit"` |
+| 4. Create repo | Create new repository on GitHub.com (don't initialize with README) |
+| 5. Add remote | `git remote add origin https://github.com/username/repo-name.git` |
+| 6. Push code | `git push -u origin main` |
+
+**Note:** Use `git branch -M main` if you need to rename the default branch from master to main.
 
 ## Basic Feature Branch Workflow
 
@@ -77,3 +94,4 @@ Table: Options for undoing changes
 - Use meaningful branch names: `feature/login-page`, `bugfix/header-alignment`
 - Write clear commit messages that explain why changes were made
 - Regularly pull from main to keep feature branches updated
+- Install GitHub CLI (`gh`) for streamlined repository creation and management

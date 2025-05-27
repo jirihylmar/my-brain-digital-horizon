@@ -1,0 +1,1 @@
+pandoc directory-structure.md --filter mermaid-filter -o directory-structure.pdf --variable lang=cs

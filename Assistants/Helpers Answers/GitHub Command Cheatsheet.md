@@ -2,10 +2,11 @@
 
 ```yaml
 Author: :person_jirihylmar
-Updated: 2025-05-26T00:00:00Z
+Updated: 2025-05-27T00:00:00Z
 Purpose:
 - Simple Git workflow overview for feature development using branches
 - Repository initialization and setup
+- Safe rollback procedures for production environments
 Keywords:
 - GitHub
 - Git
@@ -13,6 +14,8 @@ Keywords:
 - workflow
 - branches
 - repository setup
+- rollback
+- revert
 ```
 
 ## Quick Reference
@@ -77,15 +80,37 @@ Table: Viewing differences and history
 
 ## Reverting Changes
 
-Table: Options for undoing changes
+### Safe Production Rollback (Recommended)
 
-| Command | Result |
-|---------|--------|
-| 15. `git reset --soft HEAD~1` | Undo last commit, keep changes staged |
-| 16. `git reset HEAD~1` | Undo last commit, keep changes unstaged |
-| 17. `git reset --hard HEAD~1` | Undo last commit, discard all changes |
-| 18. `git checkout HEAD~1 -- file.txt` | Restore specific file to previous commit |
-| 19. `git revert HEAD` | Create new commit that undoes previous changes |
+Table: Safe rollback process for shared repositories
+
+| Step | Command | Description |
+|------|---------|-------------|
+| 1. | `git checkout -b backup/feature-name` | Create backup branch from current state |
+| 2. | `git push origin backup/feature-name` | Push backup to remote |
+| 3. | `git checkout production` | Switch to production branch |
+| 4. | `git revert <commit-hash>` | Create new commit undoing changes |
+| 5. | `git push origin production` | Push revert commit |
+
+### Other Rollback Options
+
+Table: Alternative rollback methods
+
+| Command | Result | Risk Level |
+|---------|--------|------------|
+| 15. `git reset --soft HEAD~1` | Undo last commit, keep changes staged | Low |
+| 16. `git reset HEAD~1` | Undo last commit, keep changes unstaged | Medium |
+| 17. `git reset --hard HEAD~1` | Undo last commit, discard all changes | High |
+| 18. `git checkout HEAD~1 -- file.txt` | Restore specific file to previous commit | Low |
+| 19. `git revert HEAD` | Create new commit that undoes previous changes | Low |
+| 20. `git reset --hard <commit-hash>` + `git push --force-with-lease` | Reset to specific commit (destructive) | Very High |
+
+### When to Use Each Method
+
+- **git revert**: Best for shared branches, preserves history, creates new commit
+- **git reset --soft/mixed**: Good for local commits not yet pushed
+- **git reset --hard**: Use only when certain no one else has the changes
+- **Force push**: Only for branches you own or with team coordination
 
 ## Advanced Tips
 
@@ -95,3 +120,6 @@ Table: Options for undoing changes
 - Write clear commit messages that explain why changes were made
 - Regularly pull from main to keep feature branches updated
 - Install GitHub CLI (`gh`) for streamlined repository creation and management
+- Always create backup branches before major rollbacks in production
+- Use `git log` to identify exact commit hashes before reverting
+- Consider `git revert` over `git reset` for production environments

@@ -1,0 +1,9 @@
+{
+  "produkty": [
+    {"kod": "VC-1000", "nazev": "Vitamín C 1000mg", "cena": 299, "dph": 21, "skladem": 150},
+    {"kod": "OM-3-500", "nazev": "Omega-3 rybí olej", "cena": 459, "dph": 21, "skladem": 75},
+    {"kod": "MV-W-60", "nazev": "Multivitamín pro ženy", "cena": 389, "dph": 21, "skladem": 0},
+    {"kod": "VD-2000", "nazev": "Vitamín D3 2000 IU", "cena": 189, "dph": 21, "skladem": 200},
+    {"kod": "MG-B6-90", "nazev": "Hořčík + B6", "cena": 269, "dph": 21, "skladem": 45}
+  ]
+}

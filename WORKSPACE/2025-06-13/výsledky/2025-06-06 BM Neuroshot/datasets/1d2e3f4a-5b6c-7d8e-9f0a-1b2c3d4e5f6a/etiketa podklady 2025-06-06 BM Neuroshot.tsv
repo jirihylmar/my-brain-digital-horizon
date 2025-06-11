@@ -1,0 +1,32 @@
+pole	popis	hodnota
+nazev_produktu	Hlavní název produktu na etiketě	Neuro Shot
+podtitul	Doplňkový název/varianta produktu	Citrus V4
+objem	Objem/hmotnost balení včetně jednotky	100ml ℮
+typ_produktu	Kategorie produktu	Doplněk stravy
+slogan	Marketingový slogan/claim	
+usp	Unique selling points oddělené svislítkem	Natural Flavourings | No Artificial Colours | Vegan | Gluten-Free
+certifikaty	Seznam certifikací oddělený svislítkem	VEGAN | GLUTEN-FREE | LAB-TESTED
+distributor	Úplné údaje distributora včetně adresy	BrainMarket s.r.o., Hladnovská 83/93, 712 00 Ostrava, Czech Republic
+vyrobce	Úplné údaje výrobce včetně adresy	Future Nutrition Ltd., Railway Stores, Templeshannon, Enniscorthy, Co. Wexford, Ireland. Reg. No: 494147
+dovozce	Údaje dovozce (pokud je relevantní)	BrainMarket s.r.o., Hladnovská 83/93, 712 00 Ostrava, Czech Republic
+hmotnost_netto	Čistá hmotnost/objem s ℮ značkou	100ml ℮
+davkovani	Doporučené dávkování/užívání	1 lahvička denně. Před použitím protřepejte.
+pocet_davek	Počet dávek v balení	1
+nutricni_hodnoty_100ml	Nutriční hodnoty na 100ml oddělené svislítkem	Energie: 124 kJ / 30 kcal | Tuky: 0.00 g | z toho nasycené: 0.00 g | Sacharidy: 0.01 g | z toho cukry: 0.00 g | Bílkoviny: 0.15 g | Sůl: 0.11 g
+slozeni	Kompletní seznam ingrediencí v sestupném pořadí	Voda, L-citrulin, N-acetyl L-tyrosin, regulátory kyselosti (kyselina jablečná, kyselina fosforečná), citicolin CDP cholin sodný, aromata, konzervant (sorban draselný), disodium uridin-5-monofosfát, L-theanin extrahovaný ze zeleného čaje (Camellia sinensis) [Theagreen®], vitamín C (kyselina askorbová), kofein bezvodý, sladidla (acesulfam K, sukralóza, steviol glykosidy ze stévie), vitamín B3 (nikotinamid), vitamín B6 (pyridoxal 5-fosfát), vitamín B5 (kyselina pantothenová), vitamín B12 (methylkobalamin)
+alergeny	Alergenní látky a upozornění na křížovou kontaminaci	Tento produkt neobsahuje žádné známé alergeny podle nařízení 1169/2011. Vyrobeno v prostředí, kde se zpracovává mléko, lepek, ryby, sója a oxid siřičitý.
+aktivni_latky_davka	Aktivní látky na dávku s množstvím a % RHP	N-acetyl L-tyrosin: 1000 mg | L-citrulin: 6000 mg | Kofein: 100 mg | Citicolin CDP cholin sodný: 400 mg | Disodium uridin-5-monofosfát: 200 mg | L-theanin (z Theagreen®): 100 mg | Vitamín C: 90 mg (113% RHP) | Vitamín B5: 5 mg (83% RHP) | Vitamín B3: 16 mg (100% RHP) | Vitamín B6: 5 mg (357% RHP) | Vitamín B12: 5 μg (200% RHP)
+rhp_vysvetlivka	Vysvětlivka k RHP	RHP: Referenční hodnota příjmu
+upozorneni	Zdravotní upozornění a varování	Před použitím protřepejte. Nepřekračujte doporučené denní dávkování. Doplněk stravy není náhradou pestré a vyvážené stravy a zdravého životního stylu. Uchovávejte mimo dosah dětí. Obsahuje kofein (100 mg/100ml). Nedoporučuje se pro děti a těhotné ženy.
+skladovani	Podmínky skladování	Skladujte v chladných a suchých podmínkách mimo přímé sluneční světlo. Doporučená teplota: 2°C až 27°C.
+minimalni_trvanlivost	Formát a umístění data minimální trvanlivosti	Minimální trvanlivost do: viz obal
+material_obalu	Materiál lahvičky/obalu s kódem	Plastová lahvička
+material_etikety	Materiál etikety s kódem	21 PAP (papír)
+recyklacni_znacky	Recyklační symboly a kódy	♻
+carovy_kod	EAN kód produktu	
+sarze	Umístění čísla šarže na obalu	Viz obal
+jazyk_etikety	Jazyk textu na etiketě	Čeština
+web	Webové stránky	www.brainmarket.cz
+kontakt	Kontaktní email nebo telefon	info@brainmarket.cz
+registracni_cislo	Registrační číslo doplňku stravy	
+cesta_ulozeni	Cesta k uložení souboru v systému	výsledky/2025-06-06 BM Neuroshot/datasets/1d2e3f4a-5b6c-7d8e-9f0a-1b2c3d4e5f6a/etiketa podklady 2025-06-06 BM Neuroshot.tsv

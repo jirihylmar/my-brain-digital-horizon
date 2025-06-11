@@ -1,0 +1,46 @@
+{
+  "id": "1d2e3f4a-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
+  
+  "Attributes": {
+    "_authors": ["Jiří Hylmar"],
+    "_category": ["dataset", "small file"],
+    "_created_at": "2025-06-11T10:44:58.993498Z",
+    "_data_source_id": "s3://vysledky/2025-06-06-BM-Neuroshot/datasets/1d2e3f4a-5b6c-7d8e-9f0a-1b2c3d4e5f6a/etiketa-podklady-2025-06-06-BM-Neuroshot.tsv",
+    "_document_title": "Etiketa podklady 2025-06-06 BM Neuroshot",
+    "_file_type": "tsv",
+    "_language_code": "cs",
+    "_last_updated_at": "2025-06-11T10:44:58.993498Z",
+    "_source_uri": "https://storage.example.com/vysledky/2025-06-06-BM-Neuroshot/datasets/1d2e3f4a-5b6c-7d8e-9f0a-1b2c3d4e5f6a/etiketa-podklady-2025-06-06-BM-Neuroshot.tsv",
+    
+    "dc_title": "Datová struktura pro etiketu Neuro Shot Citrus V4",
+    "dc_type": "Dataset",
+    "dc_abstract": "Strukturovaná data obsahující všechny potřebné informace pro vytvoření etikety produktu Neuro Shot 100ml Citrus V4. Dataset zahrnuje texty, nutriční hodnoty, složení, certifikace a technické parametry.",
+    "additional_languages": ["en"],
+    "dc_subject": [
+      "etiketa produktu",
+      "Neuro Shot",
+      "nutriční hodnoty",
+      "složení produktu",
+      "doplněk stravy",
+      "označování potravin",
+      "Future Nutrition Ltd"
+    ],
+    "dc_rights_holder": "BrainMarket s.r.o.",
+    "dc_license": "copyright",
+    "dc_accrual_method": "creation",
+    "dc_source": null,
+    "dc_relation": [
+      "podklady/2025-06-06 BM Neuroshot/specifikace produktu.pdf",
+      "podklady/2025-06-06 BM Neuroshot/faktura.pdf",
+      "výsledky/2025-06-06 BM Neuroshot/documents/8f3a2b1c-4e5d-4f6a-b7c8-9d0e1f2a3b4c/kontrolní zpráva 2025-06-06 BM Neuroshot.md"
+    ],
+    "dc_has_format": null,
+    "dc_is_format_of": null,
+    "dc_has_part": null,
+    "dc_is_part_of": null
+  },
+  
+  "Title": "Etiketa podklady 2025-06-06 BM Neuroshot",
+  "ContentType": "TSV",
+  "SK": "#jirihylmar#cs#etiketa_podklady_2025_06_06_bm_neuroshot"
+}

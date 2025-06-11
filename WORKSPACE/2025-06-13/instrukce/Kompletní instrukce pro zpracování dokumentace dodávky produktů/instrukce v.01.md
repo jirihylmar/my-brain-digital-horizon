@@ -292,7 +292,7 @@ Viz sekce 4.2
   },
   
   "Title": "Kontrolni zprava [datum] [projekt]",
-  "ContentType": "DOCX",
+  "ContentType": "MARKDOWN",
   "SK": "#jmenoautora#cs#kontrolni_zprava_[datum]_[projekt]"
 }
 ```
@@ -366,19 +366,27 @@ Viz sekce 4.2
 - `sk` - slovenština
 
 **SK klíč:**
-- Formát: `#{jazyk}#{název_podtržítky}`
+- Formát: `#{jmenoautora}#{jazyk}#{název_podtržítky}`
 - Bez diakritiky, malá písmena
 - Mezery nahradit podtržítky
 
 ## 5. README PRO ULOŽENÍ SOUBORŮ
 
-Vynerovan0 soubory uložte do následujících umístění.
+Vytvořit README s instrukcemi a pomocnými příkazy pro uživatele s následujícím obsahem:
 
-./{cesta 1}
-./{cesta 2}
-./{cesta 3}
-./{cesta 4}
-./výsledky/[datum] [projekt]/README.md
+Vynerované soubory uložte do následujících umístění.
+1. vytvořte mock soubory
+2. následně do předpřipravených souborů zkopírujete obsah generovaných dokumentů
+
+Příkaz pro MAC OS terminál.
+
+```bash
+mkdir -p "{cesta 1}/{soubor}"
+mkdir -p "{cesta 2}/{soubor}"
+mkdir -p "{cesta 3}/{soubor}"
+mkdir -p "{cesta 4}/{soubor}"
+mkdir -p "výsledky/[datum] [projekt]/README.md"
+```
 
 Autor: {Jmého Autora}
 Datum a čas zpracování: {ts8601}

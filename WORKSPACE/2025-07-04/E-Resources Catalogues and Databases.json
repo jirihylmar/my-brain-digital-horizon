@@ -1,0 +1,371 @@
+{
+	"title": "VSB-TUO Central Library E-Resources",
+	"remoteAccessInfo": "For detailed information on remote access to electronic resources see: https://knihovna.vsb.cz/en/catalogues-and-databases/databases-and-e-sources/remote-access/",
+	"resources": [
+	  {
+		"name": "Academic Search Ultimate (EBSCO)",
+		"type": "Bibliographical bases with full texts",
+		"subject": "Multi-subject",
+		"description": "A multi-subject database that offers a collection of peer-reviewed, full-text journals, including many journals indexed in leading citation databases.",
+		"url": "https://research.ebsco.com/c/yoie6s/search?defaultdb=asn",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Business Source Ultimate (EBSCO)",
+		"type": "Bibliographical bases with full texts",
+		"subject": ["Economics", "Business"],
+		"description": "A business-oriented database, including economic fields like management, accountancy, finances, etc. It contains more than 3,800 full-text journals, and bibliographic records with abstracts from more than 5,000 journals. It also monitors other types of documents: monographs, research reports, analyses, proceedings...",
+		"url": "https://research.ebsco.com/c/yoie6s/search?defaultdb=bsu",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "ACM Digital Library",
+		"type": "Bibliographical bases with full texts",
+		"subject": "Information technology",
+		"description": "Full texts of journals, proceedings and e-books on ICT distributed by Association for Computing Machinery and other publishers.",
+		"url": "http://dl.acm.org/dl.cfm",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "IEEE Xplore",
+		"type": "Bibliographical bases with full texts",
+		"subject": ["Electronics", "Electrical engineering"],
+		"description": "A digital library of scientific organisations IEEE and IET; contains more than 4 million full-text articles from journals, proceedings, standards, e-books, courses etc.",
+		"url": "http://ieeexplore.ieee.org/Xplore/dynhome.jsp",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Knovel",
+		"type": ["Factual bases", "E-books"],
+		"subject": ["Natural Sciences", "Technology"],
+		"description": "The database presents about 4 million of factual papers, chapters, articles, diagrams and graphs from the field science and technology. These are organised by their topic, type or methods described in them.",
+		"url": "http://app.knovel.com",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": true
+	  },
+	  {
+		"name": "ProQuest Central",
+		"type": "Bibliographical bases with full texts",
+		"subject": "Multi-subject",
+		"description": "A multidisciplinary database with full texts of journals, books, dissertations and other publications from subscribed collections in the fields of natural sciences, technologies and medicine. The available collections contain more than 8,000 journals and tens of thousands of other documents; full texts may be available with certain delay after publication.",
+		"url": "https://www.proquest.com/",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "ScienceDirect",
+		"type": "Bibliographical bases with full texts",
+		"subject": "Multi-subject",
+		"description": "The service offers access to full texts of purchased electronic books and about 3,200 journals, including more than 600 open access journals from Elsevier.",
+		"url": "http://www.sciencedirect.com/",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Scopus",
+		"type": "Bibliographical and citation bases",
+		"subject": "Multi-subject",
+		"description": "A multidisciplinary bibliographic and citation database presented by Elsevier. It containts more than 80 million records – about 25,000 peer-reviewed journals, from more than 7,000 publishers, about 250,000 books, proceedings or 44 million patents.",
+		"url": "http://www.scopus.com",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "SpringerLink",
+		"type": "Bibliographical bases with full texts",
+		"subject": ["Multi-subject", "Information technology", "Mathematics"],
+		"description": "Fulltext database of journals and ebooks published by Springer Nature, mainly in the fields of ICT, mathematics, economics and computer science.",
+		"url": "https://link.springer.com/",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Web of Science",
+		"type": "Bibliographical and citation bases",
+		"subject": "Multi-subject",
+		"description": "Web of Science is an online subscription-based scientific citation indexing service that provides a comprehensive citation search. It gives access to multiple databases that reference cross-disciplinary research, which allows for in-depth exploration of specialized sub-fields within an academic or scientific discipline.",
+		"url": "https://www.webofscience.com/",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Wiley Online Library",
+		"type": "Bibliographical bases with full texts",
+		"subject": "Multi-subject",
+		"description": "The service offers full texts of about 600 books and 1200 journals published by Wiley in various fields.",
+		"url": "http://onlinelibrary.wiley.com/",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "GreenFILE (EBSCO)",
+		"type": "Bibliographical bases with full texts",
+		"subject": "Environment",
+		"description": "The database contains information on human influence on environment from perspective of science, government and public interests. It includes over 384,000 records, partly with full texts. Their subjects are global warming, green engineering, pollution, sustainable agriculture, renewable resources of energy, recycling and others.",
+		"url": "https://research.ebsco.com/c/yoie6s/search?defaultdb=8gh",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Library, Information Science & Technology Abstracts",
+		"type": "Bibliographical bases with full texts",
+		"subject": ["Library science", "Information science"],
+		"description": "A multidisciplinary bibliographic database with full texts. The EBSCOhost search engine provides an easy and effective access to information from a single search interface. Databases available for search are determined by a current subscription license.",
+		"url": "https://research.ebsco.com/c/yoie6s/search?defaultdb=lxh",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": true
+	  },
+	  {
+		"name": "Regional Business News",
+		"type": "Bibliographical bases with full texts",
+		"subject": ["Economics", "Business"],
+		"description": "A full-text database produced by EBSCO, a supplement to Business Source Ultimate. It provides access to full texts of about 100 regional business journals and magazines from the USA and Canada.",
+		"url": "https://research.ebsco.com/c/yoie6s/search?defaultdb=bwh",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "SciFinderⁿ (Chemical Abstracts)",
+		"type": "Bibliographical and citation bases",
+		"subject": "Chemistry",
+		"description": "A bibliographic database focused on chemistry and related subjects, which offers tools for work with chemical information. It is produced by CAS, a division of the American Chemical Society.",
+		"url": "https://bit.ly/3GxFzEz",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Medline",
+		"type": "Bibliographical bases with full texts",
+		"subject": "Medicine",
+		"description": "The base provides information from the fields of medicine, nursing, dentistry, veterinary medicine, health care systems, preclinical research and others. Records from more than 5,600 journals in MEDLINE are created by the National Library of Medicine in the USA, here presented and enriched by EBSCO. Alternative free access is possible via the PubMed database.",
+		"url": "https://research.ebsco.com/c/yoie6s/search?defaultdb=cmedm",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Bibliographia medica Čechoslovaca",
+		"type": "Bibliographical and citation bases",
+		"subject": "Medicine",
+		"description": "A complete source of professional medical literature published in the Czech Republic since 1947, including works by Czech authors published abroad. The database also includes Slovak medical literature published until 1996.",
+		"url": "http://www.medvik.cz/bmc/",
+		"access": "Free",
+		"requiresAuthentication": false,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Česká národní bibliografie",
+		"type": "Bibliographical and citation bases",
+		"subject": "Multi-subject",
+		"description": "Czech National Bibliography covers Czech books published since 1901; production from the period 1801–1900 is gradually being supplemented. Czech periodicals have been in relative completeness since 1990. It contains posters, postcards, audio recordings, sheet music, maps and selected articles published in the Czech Republic since 1991.",
+		"url": "http://aleph.nkp.cz/F/?func=file&file_name=find-b&local_base=cnb",
+		"access": "Free",
+		"requiresAuthentication": false,
+		"trialAccess": false
+	  },
+	  {
+		"name": "European Digital Mathematics Library",
+		"type": "Bibliographical bases with full texts",
+		"subject": "Mathematics",
+		"description": "The library contains more than 260,000 freely accessible articles from about 300 journals or e-books in the field of mathematics. It also contains records from the Czech Digital Mathematics Library.",
+		"url": "http://eudml.org",
+		"access": "Free",
+		"requiresAuthentication": false,
+		"trialAccess": false
+	  },
+	  {
+		"name": "EZB - Electronical Journals Library: free journals",
+		"type": "Bibliographical and citation bases",
+		"subject": "Multi-subject",
+		"description": "A list of freely accessible e-journals and magazines on various subjects from various fields.",
+		"url": "http://ezb.uni-regensburg.de/?colors=1&lang=en",
+		"access": "Free",
+		"requiresAuthentication": false,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Geobibline - Czech geographical bibliography",
+		"type": "Bibliographical and citation bases",
+		"subject": "Geography",
+		"description": "The base contains bibliographic records of Bohemian geographical documents since the beginnings of book printing (1450–), including grey literature. The records are enriched with objects (maps, articles, periodical covers) and full text URLs. Zoomable maps have been added since 2012 from the TEMAP project.",
+		"url": "http://www.geobibline.cz/",
+		"access": "Free",
+		"requiresAuthentication": false,
+		"trialAccess": false
+	  },
+	  {
+		"name": "PubChem",
+		"type": "Factual bases",
+		"subject": "Chemistry",
+		"description": "A factual base that offers information on about 250 million chemicals, compounds and reactions.",
+		"url": "https://pubchem.ncbi.nlm.nih.gov/",
+		"access": "Free",
+		"requiresAuthentication": false,
+		"trialAccess": false
+	  },
+	  {
+		"name": "American Physical Society e-Journals",
+		"type": "E-journals",
+		"subject": ["Physics", "Material Engineering", "Nanotechnology"],
+		"description": "A full-text database of e-journals published by American Physical Society.",
+		"url": "https://journals.aps.org/",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "EBSCOhost",
+		"type": ["Bibliographical bases with full texts", "E-books", "E-journals"],
+		"subject": ["Multi-subject", "Economics", "Social sciences and humanities"],
+		"description": "The EBSCOhost platform enables easy and efficient access to information resources. Databases available for search are determined by a current subscription license.",
+		"url": "https://research.ebsco.com/c/yoie6s/search?modal=selected-databases&db=asn%2Cnlebk%2Cbsu%2Cbwh",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "InCites",
+		"type": "Analytical tools",
+		"subject": "Analytical tool",
+		"description": "InCites is a customised, citation-based research evaluation tool that enables you to analyse institutional productivity and benchmark your output against peers worldwide. InCites is produced by Thomson Reuters and uses bibliographic record and citation data generated from Web of Science, and Journal Citation Reports.",
+		"url": "https://incites.clarivate.com",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Science",
+		"type": "E-journals",
+		"subject": "Multi-subject",
+		"description": "Science is the peer-reviewed academic journal of the American Association for the Advancement of Science (AAAS) and one of the world's top academic journals. The major focus of the journal is publishing important original scientific research and research reviews, but Science also publishes science-related news, opinions on science policy and other matters of interest to scientists and others who are concerned with the wide implications of science and technology. Unlike most scientific journals, which focus on a specific field, Science covers the full range of scientific disciplines.",
+		"url": "https://www.science.org/journal/science",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Nature",
+		"type": "E-journals",
+		"subject": "Multi-subject",
+		"description": "Nature is a weekly international journal publishing the finest peer-reviewed research in all fields of science and technology on the basis of its originality, importance, interdisciplinary interest, timeliness, accessibility, elegance and surprising conclusions. Nature also provides rapid, authoritative, insightful and arresting news and interpretation of topical and coming trends affecting science, scientists and the wider public.",
+		"url": "https://wayf.springernature.com/?redirect_uri=https://www.nature.com",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Národní digitální knihovna - DNNT",
+		"type": "Bibliographical bases with full texts",
+		"subject": "Multi-subject",
+		"description": "National Digital Library - Works Not Available on the Market - A full-text database of documents (books, journals, newspapers) published in the Czech Republic that are not available on the current market.",
+		"url": "https://www.ndk.cz/",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "ČSN online",
+		"type": "Standards",
+		"subject": "Multi-subject",
+		"description": "Access to the database with full texts of Czech technical standards and technical standardization information with the possibility of reading, without the possibility of printing.",
+		"url": "https://csnonlinefirmy.agentura-cas.cz/shibboleth/",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": true
+	  },
+	  {
+		"name": "SciVal",
+		"type": "Analytical tools",
+		"subject": "Analytical tool",
+		"description": "SciVal offers quick, easy access to research performance of more than 22,000 research institutions and their associated researchers from 230 nations worldwide.",
+		"url": "https://www.scival.com/",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "OECD iLibrary",
+		"type": "Factual bases",
+		"subject": "Multi-subject",
+		"description": "OECD iLibrary is the online library of the Organisation for Economic Cooperation and Development (OECD) featuring its books, papers, and statistics and is the gateway to OECD's analysis and data.",
+		"url": "https://www.oecd-ilibrary.org/",
+		"access": "Free",
+		"requiresAuthentication": false,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Statista",
+		"type": "Statistics bases",
+		"subject": "Economics",
+		"description": "Statista is a global data and business intelligence platform with an extensive collection of statistics, reports, and insights on over 80,000 topics from 22,500 sources in 170 industries.",
+		"url": "https://www.statista.com/",
+		"access": "Restricted",
+		"requiresAuthentication": true,
+		"trialAccess": false
+	  },
+	  {
+		"name": "Inspec with Full Text",
+		"type": "Bibliographical bases with full texts",
+		"subject": "Multi-subject",
+		"description": "Inspec with Full Text offers access to the world's scientific and technical literature in physics, electrical engineering, electronics, computing, and more. By combining full-text content with the specialized indexing and classification of the Inspec database, it provides researchers worldwide with unparalleled depth and accessibility for their research.",
+		"url": "https://research.ebsco.com/c/yoie6s/search/",
+		"access": "Free",
+		"requiresAuthentication": false,
+		"trialAccess": false
+	  }
+	],
+	"resourceTypes": [
+	  "Bibliographical bases with full texts",
+	  "Bibliographical and citation bases",
+	  "Factual bases",
+	  "E-journals",
+	  "E-books",
+	  "Standards",
+	  "Analytical tools",
+	  "Statistics bases"
+	],
+	"subjectAreas": [
+	  "Multi-subject",
+	  "Economics",
+	  "Business",
+	  "Information technology",
+	  "Electronics",
+	  "Electrical engineering",
+	  "Natural Sciences",
+	  "Technology",
+	  "Mathematics",
+	  "Environment",
+	  "Library science",
+	  "Information science",
+	  "Chemistry",
+	  "Medicine",
+	  "Geography",
+	  "Physics",
+	  "Material Engineering",
+	  "Nanotechnology",
+	  "Social sciences and humanities"
+	],
+	"accessTypes": [
+	  "Restricted",
+	  "Free"
+	]
+  }

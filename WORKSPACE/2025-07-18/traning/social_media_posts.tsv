@@ -1,0 +1,31 @@
+post_id	platform	user_id	content	likes	shares	comments	timestamp	hashtags	sentiment
+1	Instagram	user_001	Krásný den na procházce! #nature #czechia	145	23	12	2025-01-15 10:30:00	#nature #czechia	pozitivní
+2	Twitter	user_002	Zase se zpozdil vlak... #cedok #fail	8	2	15	2025-01-15 08:15:00	#cedok #fail	negativní
+3	Facebook	user_003	Nový recept na svíčkovou vyšel perfektně!	89	45	8	2025-01-14 19:20:00		pozitivní
+4	Instagram	user_004	Další den v práci #monday #coffee	34	5	3	2025-01-14 07:45:00	#monday #coffee	neutrální
+5	Twitter	user_005	Skvělý koncert včera! Doporučuju všem #music	156	78	25	2025-01-13 23:10:00	#music	pozitivní
+6	Facebook	user_006	Proč je všude tak draho? #inflation #economics	67	12	34	2025-01-13 16:30:00	#inflation #economics	negativní
+7	Instagram	user_007	Víkendový relax s knihou #reading #weekend	78	15	6	2025-01-12 14:20:00	#reading #weekend	pozitivní
+8	Twitter	user_008	Počasí je dnes hrozné #weather #rain	23	4	8	2025-01-12 11:00:00	#weather #rain	negativní
+9	Instagram	user_001	Další fotka z výletu #nature #mountains	203	34	18	2025-01-11 16:45:00	#nature #mountains	pozitivní
+10	Facebook	user_009	Konečně víkend! #friday #relax	112	28	14	2025-01-11 18:30:00	#friday #relax	pozitivní
+11	Twitter	user_010	Nová kavárna v centru je úžasná! #coffee #prague	87	19	11	2025-01-11 12:15:00	#coffee #prague	pozitivní
+12	Instagram	user_002	Ranní workout dokončen #fitness #health	56	8	5	2025-01-10 07:00:00	#fitness #health	pozitivní
+13	Facebook	user_003	Zase problémy s internetem... #internet #fail	45	6	22	2025-01-10 14:20:00	#internet #fail	negativní
+14	Twitter	user_011	Tento film je prostě geniální! #movie #cinema	134	42	19	2025-01-10 21:45:00	#movie #cinema	pozitivní
+15	Instagram	user_012	Domácí pizza se povedla #cooking #homemade	91	16	9	2025-01-09 19:30:00	#cooking #homemade	pozitivní
+16	Facebook	user_004	Dlouhá fronta u lékaře... #healthcare #waiting	29	3	17	2025-01-09 10:45:00	#healthcare #waiting	negativní
+17	Twitter	user_013	Sněhová nadílka konečně! #snow #winter	167	51	31	2025-01-09 08:20:00	#snow #winter	pozitivní
+18	Instagram	user_005	Koncert byl ještě lepší než jsem čekal #music #live	198	67	28	2025-01-08 23:15:00	#music #live	pozitivní
+19	Facebook	user_014	Nový rok, nové výzvy #newyear #goals	76	21	12	2025-01-08 09:00:00	#newyear #goals	pozitivní
+20	Twitter	user_006	Proč jsou v obchodech stále prázdné regály? #shopping #supply	38	9	26	2025-01-07 15:30:00	#shopping #supply	negativní
+21	Instagram	user_015	Tréning s osobním trenérem #fitness #training	82	14	7	2025-01-07 18:45:00	#fitness #training	pozitivní
+22	Facebook	user_007	Přečetl jsem skvělou knihu o cestování #books #travel	63	18	15	2025-01-07 20:10:00	#books #travel	pozitivní
+23	Twitter	user_016	Doprava v Praze je dnes chaos #traffic #prague	52	11	19	2025-01-06 08:30:00	#traffic #prague	negativní
+24	Instagram	user_008	Krásný západ slunce dnes #sunset #nature	189	41	23	2025-01-06 17:30:00	#sunset #nature	pozitivní
+25	Facebook	user_017	Nová práce začíná příští týden! #job #newbeginning	94	32	16	2025-01-06 14:20:00	#job #newbeginning	pozitivní
+26	Twitter	user_009	Zase výpadek elektřiny... #power #outage	27	5	14	2025-01-05 19:45:00	#power #outage	negativní
+27	Instagram	user_018	Víkendový výlet do hor #mountains #hiking	156	29	21	2025-01-05 16:00:00	#mountains #hiking	pozitivní
+28	Facebook	user_010	Skvělá večeře s přáteli #friends #dinner	108	26	18	2025-01-05 21:30:00	#friends #dinner	pozitivní
+29	Twitter	user_019	Můj oblíbený seriál má novou sezónu! #tv #series	142	38	24	2025-01-04 20:15:00	#tv #series	pozitivní
+30	Instagram	user_011	Dnes je perfektní den na focení #photography #sunny	127	22	13	2025-01-04 13:45:00	#photography #sunny	pozitivní

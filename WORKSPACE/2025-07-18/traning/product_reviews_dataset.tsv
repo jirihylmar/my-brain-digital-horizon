@@ -1,0 +1,31 @@
+review_id	product_id	product_name	category	rating	review_text	reviewer_name	review_date	verified_purchase	helpful_votes
+REV001	PROD_001	Bluetooth sluchátka	Electronics	4	Dobrý zvuk, ale baterie mohla být lepší	Jan K.	2025-01-15	TRUE	5
+REV002	PROD_002	Kuchyňský nůž	Kitchen	5	Perfektní ostrost, velmi kvalitní	Marie S.	2025-01-15	TRUE	12
+REV003	PROD_003	Notebook	Electronics	3	Pomalý, ale za tu cenu OK	Petr D.	2025-01-14	TRUE	3
+REV004	PROD_004	Běžecké boty	Sports	5	Nejpohodlnější boty co jsem měl	Tom N.	2025-01-14	TRUE	8
+REV005	PROD_005	Parfém	Beauty	2	Vůně rychle zmizí, neodpovídá popisu	Eva C.	2025-01-13	FALSE	2
+REV006	PROD_006	Kávovar	Kitchen	4	Dobrá káva, ale hlučný	Martin K.	2025-01-13	TRUE	7
+REV007	PROD_007	Kniha Python	Books	5	Skvělá pro začátečníky, doporučuji	Anna H.	2025-01-12	TRUE	15
+REV008	PROD_008	Telefon	Electronics	1	Po týdnu přestal fungovat	David L.	2025-01-12	TRUE	20
+REV009	PROD_009	Jogurtmaker	Kitchen	4	Snadné použití, dobrý jogurt	Lenka M.	2025-01-11	TRUE	6
+REV010	PROD_010	Fitness tracker	Sports	3	Základní funkce OK, ale design špatný	Pavel R.	2025-01-11	TRUE	4
+REV011	PROD_001	Bluetooth sluchátka	Electronics	5	Výborné za tu cenu! Baterie vydrží celý den	Tomáš V.	2025-01-10	TRUE	9
+REV012	PROD_011	Mixér	Kitchen	4	Solidní výkon, trochu hlučný	Klára N.	2025-01-10	TRUE	3
+REV013	PROD_003	Notebook	Electronics	2	Často se zasekává, návrat do obchodu	Jana P.	2025-01-09	TRUE	8
+REV014	PROD_012	Sportovní hodinky	Sports	5	Perfektní pro běh, vodotěsné	Michal S.	2025-01-09	TRUE	11
+REV015	PROD_013	Řasenka	Beauty	4	Délka řas super, ale rychle schne	Tereza K.	2025-01-08	TRUE	5
+REV016	PROD_002	Kuchyňský nůž	Kitchen	4	Ostrý nůž, ale rukojeť by mohla být lepší	Filip H.	2025-01-08	TRUE	7
+REV017	PROD_014	Sci-fi román	Books	3	Zajímavý děj, ale pomalý začátek	Lucie B.	2025-01-07	TRUE	2
+REV018	PROD_004	Běžecké boty	Sports	4	Pohodlné, ale po roce se opotřebovaly	Ondřej M.	2025-01-07	TRUE	6
+REV019	PROD_015	Tablet	Electronics	5	Rychlý, kvalitní displej, doporučuji	Veronika L.	2025-01-06	TRUE	14
+REV020	PROD_005	Parfém	Beauty	1	Vůbec nevoní jako v obchodě, podvod	Adam R.	2025-01-06	TRUE	18
+REV021	PROD_006	Kávovar	Kitchen	5	Nejlepší investice! Káva jako z kavárny	Zuzana T.	2025-01-05	TRUE	22
+REV022	PROD_016	Detektivka	Books	4	Napínavá až do konce, čte se rychle	Roman F.	2025-01-05	TRUE	4
+REV023	PROD_008	Telefon	Electronics	2	Slabá baterie, fotoaparát průměrný	Kristýna D.	2025-01-04	TRUE	13
+REV024	PROD_017	Powerbanka	Electronics	4	Rychlé nabíjení, ale trochu těžká	Václav P.	2025-01-04	TRUE	8
+REV025	PROD_009	Jogurtmaker	Kitchen	3	Funguje, ale čištění je komplikované	Simona C.	2025-01-03	TRUE	5
+REV026	PROD_010	Fitness tracker	Sports	5	Po roce používání stále spokojen	Lukáš J.	2025-01-03	TRUE	12
+REV027	PROD_018	Hydratační krém	Beauty	4	Dobře hydratuje, ale drahý	Nikola Z.	2025-01-02	TRUE	6
+REV028	PROD_007	Kniha Python	Books	4	Dobré příklady, ale mohlo být více praktiky	Štěpán G.	2025-01-02	TRUE	9
+REV029	PROD_019	Myš	Electronics	3	Základní funkce v pořádku, nic extra	Klára W.	2025-01-01	TRUE	3
+REV030	PROD_011	Mixér	Kitchen	5	Výborný výkon, mixuje všechno bez problému	Pavel Y.	2025-01-01	TRUE	16

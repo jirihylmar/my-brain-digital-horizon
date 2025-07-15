@@ -1,0 +1,31 @@
+ticket_id	customer_id	category	priority	status	created_date	resolved_date	agent_id	satisfaction_score	description
+T001	CUST_001	Technical	High	Resolved	2025-01-10 09:15:00	2025-01-11 14:30:00	AGT_003	4	Aplikace se neustále zavírá při otevření fotografií
+T002	CUST_002	Billing	Medium	Resolved	2025-01-10 11:20:00	2025-01-10 16:45:00	AGT_001	5	Chyba v účtování - dvojitá platba
+T003	CUST_003	Account	Low	In Progress	2025-01-11 08:30:00		AGT_002		Žádost o změnu emailové adresy
+T004	CUST_004	Technical	High	Resolved	2025-01-11 13:45:00	2025-01-12 10:15:00	AGT_003	3	Nelze se přihlásit - zapomenuté heslo nefunguje
+T005	CUST_005	General	Medium	Resolved	2025-01-12 10:00:00	2025-01-12 12:30:00	AGT_001	5	Dotaz na nové funkce aplikace
+T006	CUST_006	Technical	Critical	Open	2025-01-13 15:20:00		AGT_004		Ztráta všech dat po aktualizaci
+T007	CUST_007	Billing	Low	Resolved	2025-01-13 16:10:00	2025-01-14 09:20:00	AGT_002	4	Dotaz na způsoby platby
+T008	CUST_008	Account	Medium	Resolved	2025-01-14 14:15:00	2025-01-14 17:45:00	AGT_001	5	Aktivace premium účtu
+T009	CUST_009	Technical	High	Resolved	2025-01-14 16:30:00	2025-01-15 11:20:00	AGT_003	2	Aplikace nejde nainstalovat na nový telefon
+T010	CUST_010	General	Low	Resolved	2025-01-15 09:45:00	2025-01-15 14:30:00	AGT_002	4	Informace o kompatibilitě s iOS
+T011	CUST_001	Billing	Medium	Resolved	2025-01-15 10:20:00	2025-01-15 15:10:00	AGT_001	3	Problém s automatickou platbou
+T012	CUST_011	Technical	Critical	In Progress	2025-01-15 14:45:00		AGT_004		Server nedostupný - nelze synchronizovat data
+T013	CUST_012	Account	Low	Resolved	2025-01-16 08:15:00	2025-01-16 11:30:00	AGT_002	5	Změna uživatelského jména
+T014	CUST_013	Technical	Medium	Open	2025-01-16 12:00:00		AGT_003		Pomalé načítání obrázků v galerii
+T015	CUST_014	Billing	High	Resolved	2025-01-16 13:30:00	2025-01-16 17:45:00	AGT_001	4	Nesprávně účtovaná služba
+T016	CUST_002	General	Low	Resolved	2025-01-17 10:15:00	2025-01-17 16:20:00	AGT_002	5	Dotaz na bezpečnostní funkce
+T017	CUST_015	Technical	High	Resolved	2025-01-17 11:45:00	2025-01-18 09:30:00	AGT_003	3	Chyba při exportu dat
+T018	CUST_016	Account	Medium	Resolved	2025-01-17 14:20:00	2025-01-17 18:45:00	AGT_004	4	Propojení s Google účtem
+T019	CUST_017	Billing	Low	In Progress	2025-01-18 09:30:00		AGT_001		Žádost o daňový doklad
+T020	CUST_003	Technical	Critical	Open	2025-01-18 11:15:00		AGT_003		Kompletní výpadek služby
+T021	CUST_018	General	Medium	Resolved	2025-01-18 13:45:00	2025-01-18 16:30:00	AGT_002	5	Návod k použití nové funkce
+T022	CUST_019	Account	High	Resolved	2025-01-18 15:20:00	2025-01-19 10:45:00	AGT_004	2	Podezření na neautorizovaný přístup
+T023	CUST_004	Technical	Medium	Resolved	2025-01-19 08:30:00	2025-01-19 14:15:00	AGT_003	4	Problém s notifikacemi
+T024	CUST_020	Billing	Low	Resolved	2025-01-19 10:45:00	2025-01-19 13:20:00	AGT_001	5	Změna platebního plánu
+T025	CUST_021	Technical	High	In Progress	2025-01-19 14:30:00		AGT_003		Nefunkční backup funkce
+T026	CUST_005	General	Low	Resolved	2025-01-20 09:15:00	2025-01-20 12:45:00	AGT_002	4	FAQ o nových funkcích
+T027	CUST_022	Account	Medium	Open	2025-01-20 11:30:00		AGT_004		Žádost o smazání účtu
+T028	CUST_023	Technical	Critical	Resolved	2025-01-20 13:45:00	2025-01-21 08:30:00	AGT_003	3	Databáze nedostupná
+T029	CUST_006	Billing	High	Resolved	2025-01-20 15:20:00	2025-01-20 18:45:00	AGT_001	4	Chybný odpočet kreditů
+T030	CUST_024	General	Medium	Resolved	2025-01-21 10:00:00	2025-01-21 15:30:00	AGT_002	5	Školení pro firemní účet

@@ -1,0 +1,41 @@
+transaction_id	customer_id	product_category	product_name	quantity	unit_price	total_amount	purchase_date	payment_method	store_location	customer_age	customer_gender
+TXN001	CUST_101	Electronics	Smartphone	1	25000	25000	2025-01-15	Credit Card	Praha	32	M
+TXN002	CUST_102	Clothing	Zimní bunda	1	3500	3500	2025-01-15	Cash	Brno	28	F
+TXN003	CUST_103	Food	Káva	3	250	750	2025-01-15	Debit Card	Ostrava	45	M
+TXN004	CUST_104	Books	Programování v Pythonu	2	800	1600	2025-01-14	Credit Card	Praha	35	F
+TXN005	CUST_105	Electronics	Sluchátka	1	2500	2500	2025-01-14	Cash	Brno	22	M
+TXN006	CUST_106	Clothing	Tričko	4	600	2400	2025-01-14	Debit Card	Praha	19	F
+TXN007	CUST_107	Food	Čokoláda	5	80	400	2025-01-13	Cash	Ostrava	52	F
+TXN008	CUST_108	Electronics	Tablet	1	15000	15000	2025-01-13	Credit Card	Praha	41	M
+TXN009	CUST_109	Books	Kuchařka	1	450	450	2025-01-13	Debit Card	Brno	38	F
+TXN010	CUST_110	Clothing	Džíny	2	1200	2400	2025-01-12	Credit Card	Ostrava	29	M
+TXN011	CUST_101	Food	Čaj	2	180	360	2025-01-12	Credit Card	Praha	32	M
+TXN012	CUST_111	Electronics	Smartwatch	1	8000	8000	2025-01-12	Debit Card	Brno	36	F
+TXN013	CUST_112	Clothing	Svetr	1	2200	2200	2025-01-11	Cash	Praha	24	M
+TXN014	CUST_113	Books	Detektivka	3	350	1050	2025-01-11	Credit Card	Ostrava	47	F
+TXN015	CUST_102	Food	Sušenky	6	120	720	2025-01-11	Cash	Brno	28	F
+TXN016	CUST_114	Electronics	Bluetooth reproduktor	1	1800	1800	2025-01-10	Debit Card	Praha	33	M
+TXN017	CUST_115	Clothing	Boty	1	4500	4500	2025-01-10	Credit Card	Brno	29	F
+TXN018	CUST_103	Books	Sci-fi román	1	420	420	2025-01-10	Debit Card	Ostrava	45	M
+TXN019	CUST_116	Food	Víno	2	350	700	2025-01-09	Cash	Praha	39	M
+TXN020	CUST_117	Electronics	Powerbank	1	1200	1200	2025-01-09	Credit Card	Brno	26	F
+TXN021	CUST_104	Clothing	Šála	2	800	1600	2025-01-09	Credit Card	Praha	35	F
+TXN022	CUST_118	Food	Pivo	12	45	540	2025-01-08	Cash	Ostrava	31	M
+TXN023	CUST_119	Books	Biografie	1	580	580	2025-01-08	Debit Card	Brno	42	F
+TXN024	CUST_105	Electronics	Kabely	3	200	600	2025-01-08	Cash	Brno	22	M
+TXN025	CUST_120	Clothing	Kalhoty	1	1800	1800	2025-01-07	Credit Card	Praha	27	F
+TXN026	CUST_106	Food	Müsli	2	220	440	2025-01-07	Debit Card	Praha	19	F
+TXN027	CUST_121	Electronics	Webkamera	1	2200	2200	2025-01-07	Credit Card	Ostrava	34	M
+TXN028	CUST_122	Books	Cestopis	2	480	960	2025-01-06	Cash	Brno	38	F
+TXN029	CUST_107	Clothing	Ponožky	8	150	1200	2025-01-06	Cash	Ostrava	52	F
+TXN030	CUST_123	Electronics	Nabíječka	2	450	900	2025-01-06	Debit Card	Praha	25	M
+TXN031	CUST_108	Food	Jogurt	4	65	260	2025-01-05	Credit Card	Praha	41	M
+TXN032	CUST_124	Clothing	Mikina	1	1600	1600	2025-01-05	Cash	Brno	30	F
+TXN033	CUST_125	Books	Poezie	1	320	320	2025-01-05	Debit Card	Ostrava	44	M
+TXN034	CUST_109	Electronics	USB flash	2	350	700	2025-01-04	Debit Card	Brno	38	F
+TXN035	CUST_126	Food	Mléko	3	28	84	2025-01-04	Cash	Praha	23	F
+TXN036	CUST_110	Clothing	Košile	1	2800	2800	2025-01-04	Credit Card	Ostrava	29	M
+TXN037	CUST_127	Electronics	Klávesnice	1	1500	1500	2025-01-03	Debit Card	Brno	37	M
+TXN038	CUST_128	Books	Encyklopedie	1	1200	1200	2025-01-03	Credit Card	Praha	51	F
+TXN039	CUST_111	Food	Ovoce	2	180	360	2025-01-03	Debit Card	Brno	36	F
+TXN040	CUST_129	Clothing	Rukavice	2	450	900	2025-01-02	Cash	Ostrava	33	M

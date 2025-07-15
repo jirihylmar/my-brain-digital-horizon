@@ -1,0 +1,31 @@
+employee_id	name	department	position	hire_date	salary	age	gender	education	performance_rating	training_hours	overtime_hours	sick_days	status
+EMP001	Jan Novák	IT	Developer	2023-03-15	75000	28	M	University	4.2	40	15	3	Active
+EMP002	Marie Svobodová	HR	Specialist	2022-08-20	55000	34	F	University	4.5	25	5	1	Active
+EMP003	Petr Dvořák	Finance	Analyst	2023-01-10	65000	31	M	University	4.0	30	20	2	Active
+EMP004	Jana Nováková	Marketing	Manager	2021-05-12	85000	42	F	University	4.8	15	8	0	Active
+EMP005	Tomáš Procházka	IT	Senior Developer	2020-11-03	95000	35	M	University	4.6	35	25	4	Active
+EMP006	Eva Černá	Sales	Representative	2023-09-01	50000	26	F	High School	3.8	20	10	5	Active
+EMP007	Martin Krejčí	IT	DevOps	2022-02-14	80000	29	M	University	4.1	45	30	1	Active
+EMP008	Alena Horáková	HR	Manager	2019-07-22	90000	38	F	University	4.7	10	5	2	Active
+EMP009	David Svoboda	Finance	Junior Analyst	2024-01-08	45000	24	M	University	3.9	50	12	6	Active
+EMP010	Lenka Málková	Marketing	Specialist	2023-06-19	60000	30	F	University	4.3	28	7	1	Terminated
+EMP011	Pavel Novotný	IT	Developer	2023-07-20	72000	27	M	University	4.0	38	18	2	Active
+EMP012	Kateřina Svobodová	Sales	Manager	2021-03-08	88000	39	F	University	4.6	22	12	1	Active
+EMP013	Jakub Dvořák	Finance	Senior Analyst	2020-09-15	78000	33	M	University	4.4	28	22	3	Active
+EMP014	Tereza Nováková	Marketing	Junior Specialist	2024-02-01	48000	25	F	University	3.7	45	8	4	Active
+EMP015	Michal Procházka	IT	Team Lead	2019-12-10	105000	36	M	University	4.9	20	35	2	Active
+EMP016	Barbora Černá	HR	Specialist	2022-11-25	52000	29	F	University	4.2	32	6	3	Active
+EMP017	Ondřej Krejčí	Sales	Representative	2023-04-18	47000	26	M	High School	3.6	25	14	7	Active
+EMP018	Lucie Horáková	Finance	Analyst	2022-06-12	62000	30	F	University	4.1	35	16	2	Active
+EMP019	Filip Svoboda	IT	Junior Developer	2024-03-05	58000	23	M	University	3.8	55	10	5	Active
+EMP020	Simona Málková	Marketing	Manager	2020-08-30	82000	37	F	University	4.5	18	20	1	Active
+EMP021	Václav Novotný	Sales	Senior Representative	2021-01-14	65000	32	M	University	4.3	26	16	3	Active
+EMP022	Kristýna Svobodová	HR	Junior Specialist	2023-10-03	46000	24	F	University	3.9	40	4	6	Active
+EMP023	Roman Dvořák	IT	DevOps	2022-05-22	78000	31	M	University	4.2	42	28	2	Active
+EMP024	Veronika Nováková	Finance	Manager	2019-11-18	92000	41	F	University	4.7	15	18	1	Active
+EMP025	Adam Procházka	Marketing	Specialist	2023-08-07	58000	28	M	University	4.0	30	11	4	Active
+EMP026	Zuzana Černá	Sales	Representative	2022-12-05	49000	27	F	High School	3.7	22	9	5	Terminated
+EMP027	Lukáš Krejčí	IT	Senior Developer	2020-04-16	89000	34	M	University	4.5	32	24	3	Active
+EMP028	Nikola Horáková	HR	Manager	2018-09-20	96000	43	F	University	4.8	12	7	1	Active
+EMP029	Štěpán Svoboda	Finance	Analyst	2023-02-28	64000	29	M	University	4.1	33	19	2	Active
+EMP030	Klára Málková	Marketing	Senior Specialist	2021-07-11	72000	35	F	University	4.4	24	13	2	Active

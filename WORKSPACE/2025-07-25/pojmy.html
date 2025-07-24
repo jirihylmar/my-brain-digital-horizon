@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediktivní modelování - Slovník pojmů</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .nav {
+            background: #34495e;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            background: #3498db;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border-radius: 10px;
+            background: #f8f9fa;
+            border-left: 5px solid #3498db;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .concept {
+            background: white;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .concept:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .concept h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .concept-icon {
+            width: 30px;
+            height: 30px;
+            background: #e74c3c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .basic-definition {
+            background: #e8f5e8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        .basic-definition h4 {
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .basic-definition p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .example {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .example h4 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            position: relative;
+            height: 300px;
+        }
+
+        .formula {
+            background: #ecf0f1;
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            text-align: center;
+            font-size: 1.1rem;
+            border: 2px dashed #3498db;
+        }
+
+        .key-points {
+            background: #e8f6f3;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        .key-points h4 {
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+        }
+
+        .key-points ul {
+            margin-left: 1rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: #3498db;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .interactive-demo {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .demo-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .demo-controls input, .demo-controls select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .demo-controls button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .demo-controls button:hover {
+            background: #218838;
+        }
+
+        .metric-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .metric-box {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .feature-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .feature-table th, .feature-table td {
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        .feature-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+
+        .original-data { background: #e3f2fd; }
+        .lag-feature { background: #fff3e0; }
+        .rolling-feature { background: #f3e5f5; }
+        .target { background: #e8f5e8; }
+
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .content {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .metric-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔮 Prediktivní modelování</h1>
+            <p>Kompletní slovník pojmů s vizualizacemi</p>
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#basics">Základy</a></li>
+                <li><a href="#arima">ARIMA</a></li>
+                <li><a href="#holt-winters">Holt-Winters</a></li>
+                <li><a href="#ml">Machine Learning</a></li>
+                <li><a href="#evaluation">Evaluace</a></li>
+                <li><a href="#comparison">Porovnání</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            
+            <!-- Základní pojmy -->
+            <section id="basics" class="section">
+                <h2>📚 Základní pojmy</h2>
+                
+                <div class="concept">
+                    <h3><span class="concept-icon">📈</span>Časová řada (Time Series)</h3>
+                    <div class="basic-definition">
+                        <h4>Co to je:</h4>
+                        <p>Sekvence dat uspořádaných v čase - např. denní teploty, hodinová spotřeba energie, měsíční prodeje.</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Příklad:</h4>
+                        <p>Spotřeba energie v MWh: [120, 125, 118, 130, 135, 128, ...] měřená každou hodinu</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="timeSeriesBasic"></canvas>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">📊</span>Stacionarita</h3>
+                    <div class="basic-definition">
+                        <h4>Co to je:</h4>
+                        <p><strong>Stacionární řada</strong> = data mají v čase konstantní průměr a rozptyl (nevariabilitu)</p>
+                        <p><strong>Nestacionární řada</strong> = má trend (roste/klesá) nebo měnící se variabilitu</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Analogie:</h4>
+                        <p><strong>Stacionární:</strong> Váha dospělého člověka - kolísá kolem konstanty<br>
+                        <strong>Nestacionární:</strong> Výška dítěte - neustále roste</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="stationarityBasic"></canvas>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">📉</span>Diferenciování (Differencing)</h3>
+                    <div class="basic-definition">
+                        <h4>Co to je:</h4>
+                        <p>Matematická operace: místo původních hodnot používáme <strong>rozdíly mezi sousedními hodnotami</strong></p>
+                        <p>Slouží k odstranění trendu a dosažení stacionarity</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Příklad:</h4>
+                        <p>Původní data: [100, 105, 110, 115]<br>
+                        Po diferenciování: [5, 5, 5] (105-100=5, 110-105=5, 115-110=5)</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="differencingBasic"></canvas>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">🎯</span>Chyba predikce (Prediction Error)</h3>
+                    <div class="basic-definition">
+                        <h4>Co to je:</h4>
+                        <p><strong>Chyba = Skutečná hodnota - Predikovaná hodnota</strong></p>
+                        <p>Pokud predikujeme 120 a realita je 125, chyba = 125 - 120 = 5</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Příklad:</h4>
+                        <p>Model řekl: "Zítra bude 25°C"<br>
+                        Realita: 28°C<br>
+                        Chyba: 28 - 25 = +3°C (model podhodnotil)</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="errorBasic"></canvas>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">📊</span>Rozptyl (Variance)</h3>
+                    <div class="basic-definition">
+                        <h4>Co to je:</h4>
+                        <p><strong>Míra toho, jak moc se data rozptylují kolem průměru</strong></p>
+                        <p>Vysoký rozptyl = data se hodně liší<br>Nízký rozptyl = data jsou podobná</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Analogie:</h4>
+                        <p><strong>Nízký rozptyl:</strong> Všichni studenti mají známky 2,1,2,2,1 (podobné)<br>
+                        <strong>Vysoký rozptyl:</strong> Známky 5,1,4,1,5 (velmi rozdílné)</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="varianceBasic"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ARIMA Section -->
+            <section id="arima" class="section">
+                <h2>📈 ARIMA Modely</h2>
+                
+                <div class="concept">
+                    <h3><span class="concept-icon">AR</span>Autoregresní (AR) komponenta</h3>
+                    <div class="basic-definition">
+                        <h4>Co to znamená "Autoregresní":</h4>
+                        <p><strong>"Auto" = sám, "regresní" = závislý</strong><br>
+                        = Hodnota závisí sama na sobě (na svých minulých hodnotách)</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Analogie:</h4>
+                        <p>Jako když vaše nálada dnes závisí na náladě včera a předevčírem.<br>
+                        Pokud jste včera měli dobrý den, dnes budete pravděpodobně také v dobré náladě.</p>
+                    </div>
+                    <div class="formula">y(t) = φ₁·y(t-1) + φ₂·y(t-2) + ... + φₚ·y(t-p) + εₜ</div>
+                    <div class="chart-container">
+                        <canvas id="arChart"></canvas>
+                    </div>
+                    <div class="key-points">
+                        <h4>Klíčové body:</h4>
+                        <ul>
+                            <li>AR(1): hodnota závisí jen na předchozí hodnotě</li>
+                            <li>AR(2): hodnota závisí na dvou předchozích hodnotách</li>
+                            <li>Čím vyšší AR, tím více "paměti" má model</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">I</span>Integrovaná (I) komponenta</h3>
+                    <div class="basic-definition">
+                        <h4>Co to znamená "Integrovaná":</h4>
+                        <p><strong>Počet diferenciování potřebný k dosažení stacionarity</strong><br>
+                        I(1) = musíme jednou diferencovat<br>I(0) = data už jsou stacionární</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Příklad:</h4>
+                        <p>Cena akcií roste → nestacionární → potřebujeme diferenciování<br>
+                        Po diferenciování: denní změny ceny → stacionární</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="integrationChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">MA</span>Klouzavý průměr (MA) komponenta</h3>
+                    <div class="basic-definition">
+                        <h4>Co to znamená "Moving Average":</h4>
+                        <p><strong>Model využívá předchozí chyby predikce</strong><br>
+                        Pokud model včera "chyboval", vezme to v úvahu při dnešní predikci</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Analogie:</h4>
+                        <p>Jako když střelba na terč - pokud jste včera mířili moc vlevo, dnes se posunete doprava.<br>
+                        Model si "pamatuje" své předchozí chyby a snaží se je kompenzovat.</p>
+                    </div>
+                    <div class="formula">y(t) = θ₁·εₜ₋₁ + θ₂·εₜ₋₂ + ... + θₑ·εₜ₋ₑ + εₜ</div>
+                    <div class="chart-container">
+                        <canvas id="maChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">🧪</span>ADF Test (Test stacionarity)</h3>
+                    <div class="basic-definition">
+                        <h4>Co dělá ADF test:</h4>
+                        <p><strong>Statisticky ověří, zda jsou data stacionární</strong><br>
+                        Výsledek: p-hodnota (pravděpodobnost)</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Interpretace:</h4>
+                        <p><strong>p-hodnota ≤ 0.05:</strong> "Data JSOU stacionární" ✅<br>
+                        <strong>p-hodnota > 0.05:</strong> "Data NEJSOU stacionární" ❌ (potřeba diferenciování)</p>
+                    </div>
+                    <div class="interactive-demo">
+                        <h4>🎯 Demo stacionarity:</h4>
+                        <div class="demo-controls">
+                            <label>Trend síla: <input type="range" id="trendSlider" min="0" max="2" value="0" step="0.1" onchange="updateStationarity()"></label>
+                            <label>Náhodnost: <input type="range" id="noiseSlider" min="0.1" max="2" value="0.5" step="0.1" onchange="updateStationarity()"></label>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="stationarityDemo"></canvas>
+                        </div>
+                        <div id="adfResult" style="padding: 0.5rem; background: #f8f9fa; border-radius: 4px; margin-top: 0.5rem;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Holt-Winters Section -->
+            <section id="holt-winters" class="section">
+                <h2>🌊 Exponenciální vyhlazování & Holt-Winters</h2>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">📉</span>Exponenciální vyhlazování</h3>
+                    <div class="basic-definition">
+                        <h4>Co to znamená "Exponenciální vyhlazování":</h4>
+                        <p><strong>Vážený průměr, kde novější data mají větší váhu</strong><br>
+                        "Exponenciální" = váhy klesají exponenciálně s věkem dat</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Analogie:</h4>
+                        <p>Jako vaše paměť - vzpomínky z včera jsou živější než z minulého měsíce.<br>
+                        Model dává větší váhu nedávným hodnotám a menší váhu starým.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="simpleExpChart"></canvas>
+                    </div>
+                    <div class="key-points">
+                        <h4>Parametr α (alfa):</h4>
+                        <ul>
+                            <li><strong>α blízké 1:</strong> Rychlá reakce na změny (nervózní model)</li>
+                            <li><strong>α blízké 0:</strong> Pomalá reakce, silné vyhlazení (klidný model)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">📈</span>Holt-Winters metoda</h3>
+                    <div class="basic-definition">
+                        <h4>Co je Holt-Winters:</h4>
+                        <p><strong>Rozšíření exponenciálního vyhlazování o trend a sezónnost</strong><br>
+                        Tři komponenty: úroveň (level) + trend + sezónnost</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Příklad:</h4>
+                        <p><strong>Prodej zmrzliny:</strong><br>
+                        • Úroveň: průměrný prodej<br>
+                        • Trend: roste dlouhodobě<br>
+                        • Sezónnost: více v létě, méně v zimě</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="holtWintersChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">➕</span>Aditivní vs. Multiplikativní modely</h3>
+                    <div class="basic-definition">
+                        <h4>Rozdíl mezi aditivním a multiplikativním:</h4>
+                        <p><strong>Aditivní:</strong> Komponenty se SČÍTAJÍ (+ + +)<br>
+                        <strong>Multiplikativní:</strong> Komponenty se NÁSOBÍ (× × ×)</p>
+                    </div>
+                    
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Aspekt</th>
+                                <th>Aditivní model</th>
+                                <th>Multiplikativní model</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Vzorec</strong></td>
+                                <td>y = Level + Trend + Seasonal</td>
+                                <td>y = Level × Trend × Seasonal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sezónní výkyvy</strong></td>
+                                <td>Stále stejně velké</td>
+                                <td>Rostou s úrovní dat</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Příklad použití</strong></td>
+                                <td>Teplota (rozdíl léto-zima konstantní)</td>
+                                <td>Prodeje (% nárůst v Vánocích)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="chart-container">
+                        <canvas id="additiveMultiplicativeChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Machine Learning Section -->
+            <section id="ml" class="section">
+                <h2>🤖 Machine Learning přístupy</h2>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">🔄</span>Supervised Learning pro časové řady</h3>
+                    <div class="basic-definition">
+                        <h4>Co znamená "Supervised Learning":</h4>
+                        <p><strong>Učení s učitelem</strong> = ukážeme modelu příklady "vstup → výstup" a on se naučí pravidlo</p>
+                        <p>Pro časové řady: přeměníme na problém "minulé hodnoty → budoucí hodnota"</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Konkrétní příklad transformace:</h4>
+                        <p><strong>Původní časová řada spotřeby energie:</strong></p>
+                        <table class="feature-table">
+                            <tr>
+                                <th>Čas</th>
+                                <td>1h</td><td>2h</td><td>3h</td><td>4h</td><td>5h</td><td>6h</td><td>7h</td>
+                            </tr>
+                            <tr>
+                                <th>Spotřeba</th>
+                                <td>120</td><td>125</td><td>118</td><td>130</td><td>135</td><td>128</td><td>?</td>
+                            </tr>
+                        </table>
+                        <p><strong>Transformace na supervised learning:</strong></p>
+                        <table class="feature-table">
+                            <tr>
+                                <th>Vstup (X)</th>
+                                <th>Výstup (y)</th>
+                            </tr>
+                            <tr>
+                                <td class="lag-feature">[120, 125, 118]</td>
+                                <td class="target">130</td>
+                            </tr>
+                            <tr>
+                                <td class="lag-feature">[125, 118, 130]</td>
+                                <td class="target">135</td>
+                            </tr>
+                            <tr>
+                                <td class="lag-feature">[118, 130, 135]</td>
+                                <td class="target">128</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="supervisedChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">🏗️</span>Feature Engineering - tvorba příznaků</h3>
+                    <div class="basic-definition">
+                        <h4>Co je "Feature Engineering":</h4>
+                        <p><strong>Vytváření nových užitečných proměnných z původních dat</strong><br>
+                        Cíl: Dát modelu více informací, aby lépe predikoval</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>🔍 Konkrétní příklad na datasetu energie:</h4>
+                        <p><strong>Původní dataset:</strong></p>
+                        <table class="feature-table">
+                            <tr>
+                                <th>Čas</th>
+                                <th>Spotřeba</th>
+                                <th>Teplota</th>
+                            </tr>
+                            <tr>
+                                <td>2024-01-01 10:00</td>
+                                <td class="original-data">120</td>
+                                <td class="original-data">15°C</td>
+                            </tr>
+                            <tr>
+                                <td>2024-01-01 11:00</td>
+                                <td class="original-data">125</td>
+                                <td class="original-data">16°C</td>
+                            </tr>
+                            <tr>
+                                <td>2024-01-01 12:00</td>
+                                <td class="original-data">118</td>
+                                <td class="original-data">17°C</td>
+                            </tr>
+                        </table>
+
+                        <p><strong>Po feature engineering:</strong></p>
+                        <table class="feature-table" style="font-size: 0.8rem;">
+                            <tr>
+                                <th>Spotřeba</th>
+                                <th>Teplota</th>
+                                <th>lag_1h<br>(Lag Feature)</th>
+                                <th>lag_24h<br>(Lag Feature)</th>
+                                <th>rolling_3h<br>(Rolling Mean)</th>
+                                <th>hour_sin<br>(Cyklický)</th>
+                                <th>je_víkend<br>(Kategorický)</th>
+                            </tr>
+                            <tr>
+                                <td class="target">118</td>
+                                <td class="original-data">17</td>
+                                <td class="lag-feature">125</td>
+                                <td class="lag-feature">95</td>
+                                <td class="rolling-feature">121</td>
+                                <td>0.5</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+
+                        <p><strong>Vysvětlení každé proměnné:</strong></p>
+                        <ul>
+                            <li><strong>lag_1h:</strong> Spotřeba před 1 hodinou</li>
+                            <li><strong>lag_24h:</strong> Spotřeba před 24 hodinami (stejná hodina včera)</li>
+                            <li><strong>rolling_3h:</strong> Průměr z posledních 3 hodin</li>
+                            <li><strong>hour_sin:</strong> Sinusová funkce pro hodinu (zachytí denní cyklus)</li>
+                            <li><strong>je_víkend:</strong> 1 pokud je víkend, 0 pokud všední den</li>
+                        </ul>
+                    </div>
+
+                    <div class="interactive-demo">
+                        <h4>🎯 Interaktivní ukázka features:</h4>
+                        <div class="demo-controls">
+                            <select id="featureType" onchange="updateFeatureDemo()">
+                                <option value="lag">Lag Features (minulé hodnoty)</option>
+                                <option value="rolling">Rolling Mean (klouzavý průměr)</option>
+                                <option value="cyclic">Cyklické Features (hodina dne)</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="featureDemo"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">🌳</span>Random Forest pro forecasting</h3>
+                    <div class="basic-definition">
+                        <h4>Co je Random Forest:</h4>
+                        <p><strong>"Náhodný les" = kombinace mnoha rozhodovacích stromů</strong><br>
+                        Každý strom dá svou predikci, finální predikce = průměr všech stromů</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Analogie:</h4>
+                        <p>Jako když se ptáte 100 expertů na předpověď počasí a uděláte průměr jejich odpovědí.<br>
+                        Jeden expert může chybovat, ale průměr ze 100 expertů bude přesnější.</p>
+                    </div>
+                    <div class="key-points">
+                        <h4>Výhody pro časové řady:</h4>
+                        <ul>
+                            <li><span class="highlight">Nelineární vztahy:</span> Zachytí složité vzory</li>
+                            <li><span class="highlight">Více proměnných:</span> Využije všechny vytvořené features</li>
+                            <li><span class="highlight">Robustnost:</span> Odolný vůči chybným datům</li>
+                            <li><span class="highlight">Feature importance:</span> Řekne, která proměnná je nejdůležitější</li>
+                        </ul>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="randomForestChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">✂️</span>TimeSeriesSplit</h3>
+                    <div class="basic-definition">
+                        <h4>Proč speciální rozdělení pro časové řady:</h4>
+                        <p><strong>Klasická křížová validace:</strong> náhodně míchá data ❌<br>
+                        <strong>TimeSeriesSplit:</strong> respektuje chronologické pořadí ✅</p>
+                    </div>
+                    <div class="example">
+                        <h4>🔍 Proč je to důležité:</h4>
+                        <p><strong>Špatně:</strong> Trénujeme na datech z prosince a testujeme na listopadu<br>
+                        <strong>Správně:</strong> Trénujeme na leden-říjen a testujeme na listopadu</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="timeSeriesSplitChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Evaluation Section -->
+            <section id="evaluation" class="section">
+                <h2>📊 Evaluace a metriky</h2>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">📏</span>Metriky přesnosti - vizuální porovnání</h3>
+                    <div class="basic-definition">
+                        <h4>Tři hlavní metriky a jejich rozdíly:</h4>
+                        <p>Ukážeme si na konkrétním příkladu, jak se liší MAE, RMSE a MAPE</p>
+                    </div>
+                    
+                    <div class="interactive-demo">
+                        <h4>🎯 Interaktivní porovnání metrik:</h4>
+                        <div class="demo-controls">
+                            <button onclick="generateErrorExample('normal')">Normální chyby</button>
+                            <button onclick="generateErrorExample('outlier')">S velkými odchylkami</button>
+                            <button onclick="generateErrorExample('small')">Malé hodnoty</button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="metricsComparison"></canvas>
+                        </div>
+                        <div class="metric-comparison">
+                            <div class="metric-box">
+                                <h4>MAE</h4>
+                                <div id="maeValue">0</div>
+                                <p>Průměrná absolutní chyba</p>
+                            </div>
+                            <div class="metric-box">
+                                <h4>RMSE</h4>
+                                <div id="rmseValue">0</div>
+                                <p>Odmocnina středních kvadrátů</p>
+                            </div>
+                            <div class="metric-box">
+                                <h4>MAPE</h4>
+                                <div id="mapeValue">0</div>
+                                <p>Střední absolutní procentní chyba</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">📏</span>Mean Absolute Error (MAE)</h3>
+                    <div class="basic-definition">
+                        <h4>Co je MAE:</h4>
+                        <p><strong>Průměrná velikost chyb (bez ohledu na směr)</strong><br>
+                        Všechny chyby mají stejnou váhu</p>
+                    </div>
+                    <div class="formula">MAE = (1/n) × Σ|skutečná - predikce|</div>
+                    <div class="example">
+                        <h4>🔍 Příklad výpočtu:</h4>
+                        <p>Skutečné: [100, 110, 120]<br>
+                        Predikce: [95, 115, 125]<br>
+                        Chyby: [|100-95|, |110-115|, |120-125|] = [5, 5, 5]<br>
+                        <strong>MAE = (5+5+5)/3 = 5</strong></p>
+                    </div>
+                    <div class="key-points">
+                        <h4>Výhody MAE:</h4>
+                        <ul>
+                            <li>Snadná interpretace (stejné jednotky jako data)</li>
+                            <li>Robustní vůči odlehlým hodnotám</li>
+                            <li>Všechny chyby mají stejnou váhu</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">📐</span>Root Mean Squared Error (RMSE)</h3>
+                    <div class="basic-definition">
+                        <h4>Co je RMSE:</h4>
+                        <p><strong>Penalizuje velké chyby více než malé</strong><br>
+                        Kvůli umocnění na druhou jsou velké chyby "horší"</p>
+                    </div>
+                    <div class="formula">RMSE = √[(1/n) × Σ(skutečná - predikce)²]</div>
+                    <div class="example">
+                        <h4>🔍 Porovnání s MAE:</h4>
+                        <p><strong>Scénář A:</strong> Chyby [5, 5, 5]<br>
+                        MAE = 5, RMSE = 5<br><br>
+                        <strong>Scénář B:</strong> Chyby [1, 1, 13]<br>
+                        MAE = 5, RMSE = 7.6<br><br>
+                        RMSE více "trestá" velkou chybu 13!</p>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">%</span>Mean Absolute Percentage Error (MAPE)</h3>
+                    <div class="basic-definition">
+                        <h4>Co je MAPE:</h4>
+                        <p><strong>Chyba vyjádřená v procentech</strong><br>
+                        Nezávislé na měřítku dat - 5% chyba je stejná u malých i velkých čísel</p>
+                    </div>
+                    <div class="formula">MAPE = (100/n) × Σ|(skutečná - predikce)/skutečná|</div>
+                    <div class="example">
+                        <h4>🔍 Proč procenta:</h4>
+                        <p><strong>Dataset A:</strong> Chyba 10 při hodnotě 100 = 10% chyba<br>
+                        <strong>Dataset B:</strong> Chyba 100 při hodnotě 1000 = 10% chyba<br><br>
+                        MAPE ukáže, že oba modely mají stejnou <strong>relativní</strong> přesnost</p>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">🔍</span>Residual Analysis</h3>
+                    <div class="basic-definition">
+                        <h4>Co je analýza reziduí:</h4>
+                        <p><strong>Reziduum = Skutečná hodnota - Predikovaná hodnota</strong><br>
+                        Analýza reziduí ukáže, jestli model něco přehlédl</p>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="residualChart"></canvas>
+                    </div>
+
+                    <div class="key-points">
+                        <h4>Co hledat v reziduích:</h4>
+                        <ul>
+                            <li><span class="highlight">Náhodnost:</span> Reziduá by měla být náhodná (žádný vzor)</li>
+                            <li><span class="highlight">Kolem nuly:</span> Průměr reziduí by měl být blízko 0</li>
+                            <li><span class="highlight">Konstantní rozptyl:</span> Velikost reziduí by se neměla měnit v čase</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison Section -->
+            <section id="comparison" class="section">
+                <h2>⚖️ Porovnání metod</h2>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">🏆</span>Výběr nejlepšího modelu</h3>
+                    
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Kritérium</th>
+                                <th>ARIMA</th>
+                                <th>Holt-Winters</th>
+                                <th>Random Forest</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Interpretabilita</strong></td>
+                                <td>⭐⭐⭐⭐⭐<br><small>Jasné statistické zdůvodnění</small></td>
+                                <td>⭐⭐⭐⭐<br><small>Viditelné komponenty</small></td>
+                                <td>⭐⭐<br><small>Černá skříňka</small></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Přesnost</strong></td>
+                                <td>⭐⭐⭐<br><small>Dobrá pro jednoduchá data</small></td>
+                                <td>⭐⭐⭐<br><small>Rychlá implementace</small></td>
+                                <td>⭐⭐⭐⭐⭐<br><small>Často nejpřesnější</small></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rychlost trénování</strong></td>
+                                <td>⭐⭐<br><small>Může být pomalé</small></td>
+                                <td>⭐⭐⭐⭐⭐<br><small>Velmi rychlé</small></td>
+                                <td>⭐⭐⭐<br><small>Střední rychlost</small></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Robustnost</strong></td>
+                                <td>⭐⭐<br><small>Citlivé na předpoklady</small></td>
+                                <td>⭐⭐⭐<br><small>Dobré pro standardní vzory</small></td>
+                                <td>⭐⭐⭐⭐⭐<br><small>Odolné vůči odlehlým hodnotám</small></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Flexibilita</strong></td>
+                                <td>⭐⭐<br><small>Pouze časové řady</small></td>
+                                <td>⭐⭐⭐<br><small>Trend + sezónnost</small></td>
+                                <td>⭐⭐⭐⭐⭐<br><small>Může využít jakékoli proměnné</small></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="concept">
+                    <h3><span class="concept-icon">🎯</span>Kdy použít kterou metodu?</h3>
+                    
+                    <div class="key-points">
+                        <h4>ARIMA - volte když:</h4>
+                        <ul>
+                            <li>Potřebujete vysvětlit <strong>PROČ</strong> model predikuje určitou hodnotu</li>
+                            <li>Prezentujete výsledky managementu nebo klientům</li>
+                            <li>Máte pouze časovou řadu bez dalších proměnných</li>
+                            <li>Data mají jasnou strukturu (trend, sezónnost)</li>
+                        </ul>
+                    </div>
+
+                    <div class="key-points">
+                        <h4>Holt-Winters - volte když:</h4>
+                        <ul>
+                            <li>Potřebujete <strong>rychle</strong> nasadit funkční řešení</li>
+                            <li>Data mají zřetelný trend a sezónnost</li>
+                            <li>Máte omezené výpočetní zdroje</li>
+                            <li>Chcete jednoduchou a stabilní metodu</li>
+                        </ul>
+                    </div>
+
+                    <div class="key-points">
+                        <h4>Random Forest - volte když:</h4>
+                        <ul>
+                            <li>Priorita je <strong>maximální přesnost</strong> predikce</li>
+                            <li>Máte k dispozici další proměnné (teplota, cena, marketing...)</li>
+                            <li>Data obsahují složité nelineární vzory</li>
+                            <li>Můžete obětovat interpretabilitu za přesnost</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Chart configurations
+        const chartConfig = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        };
+
+        // Helper functions
+        function generateTimeSeries(length, trend = 0, seasonality = 0, noise = 1) {
+            const data = [];
+            for (let i = 0; i < length; i++) {
+                const seasonal = seasonality * Math.sin(2 * Math.PI * i / 24);
+                const trendValue = trend * i / length;
+                const random = (Math.random() - 0.5) * noise;
+                data.push(10 + trendValue + seasonal + random);
+            }
+            return data;
+        }
+
+        // Initialize charts
+        document.addEventListener('DOMContent', function() {
+            initializeCharts();
+        });
+
+        function initializeCharts() {
+            // Basic Time Series
+            const tsBasicCtx = document.getElementById('timeSeriesBasic');
+            if (tsBasicCtx) {
+                const basicData = [120, 125, 118, 130, 135, 128, 122, 138, 142, 135];
+                new Chart(tsBasicCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['1h', '2h', '3h', '4h', '5h', '6h', '7h', '8h', '9h', '10h'],
+                        datasets: [{
+                            label: 'Spotřeba energie (MWh)',
+                            data: basicData,
+                            borderColor: '#3498db',
+                            backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                            tension: 0.4,
+                            pointRadius: 6
+                        }]
+                    },
+                    options: chartConfig
+                });
+            }
+
+            // Stationarity Basic
+            const statBasicCtx = document.getElementById('stationarityBasic');
+            if (statBasicCtx) {
+                const stationaryData = [10, 12, 9, 11, 13, 10, 12, 11, 10, 13];
+                const nonStationaryData = [10, 12, 14, 16, 18, 20, 22, 24, 26, 28];
+                new Chart(statBasicCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Array.from({length: 10}, (_, i) => i + 1),
+                        datasets: [{
+                            label: 'Stacionární (váha dospělého)',
+                            data: stationaryData,
+                            borderColor: '#27ae60',
+                            tension: 0.4
+                        }, {
+                            label: 'Nestacionární (výška dítěte)',
+                            data: nonStationaryData,   
+                            borderColor: '#e74c3c',
+                            tension: 0.4
+                        }]
+                    },
+                    options: chartConfig
+                });
+            }
+
+            // Differencing Basic
+            const diffBasicCtx = document.getElementById('differencingBasic');
+            if (diffBasicCtx) {
+                const originalData = [100, 105, 110, 115, 120, 125];
+                const diffData = [null, 5, 5, 5, 5, 5];
+                new Chart(diffBasicCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['t1', 't2', 't3', 't4', 't5', 't6'],
+                        datasets: [{
+                            label: 'Původní data (nestacionární)',
+                            data: originalData,
+                            borderColor: '#e74c3c',
+                            yAxisID: 'y'
+                        }, {
+                            label: 'Po diferenciování (stacionární)',
+                            data: diffData,
+                            borderColor: '#27ae60',
+                            yAxisID: 'y1'
+                        }]
+                    },
+                    options: {
+                        ...chartConfig,
+                        scales: {
+                            y: {
+                                type: 'linear',
+                                display: true,
+                                position: 'left',
+                                title: { display: true, text: 'Původní hodnoty' }
+                            },
+                            y1: {
+                                type: 'linear',
+                                display: true,
+                                position: 'right',
+                                title: { display: true, text: 'Diference' },
+                                grid: { drawOnChartArea: false }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Error Basic
+            const errorBasicCtx = document.getElementById('errorBasic');
+            if (errorBasicCtx) {
+                const actual = [25, 28, 30, 26, 29];
+                const predicted = [23, 30, 28, 28, 27];
+                new Chart(errorBasicCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Den 1', 'Den 2', 'Den 3', 'Den 4', 'Den 5'],
+                        datasets: [{
+                            label: 'Skutečná teplota',
+                            data: actual,
+                            borderColor: '#2c3e50',
+                            backgroundColor: 'rgba(44, 62, 80, 0.1)',
+                            pointRadius: 8
+                        }, {
+                            label: 'Predikovaná teplota',
+                            data: predicted,
+                            borderColor: '#e74c3c',
+                            borderDash: [5, 5],
+                            pointRadius: 8
+                        }]
+                    },
+                    options: {
+                        ...chartConfig,
+                        plugins: {
+                            ...chartConfig.plugins,
+                            tooltip: {
+                                callbacks: {
+                                    afterLabel: function(context) {
+                                        if (context.datasetIndex === 0) {
+                                            const predVal = predicted[context.dataIndex];
+                                            const actualVal = context.parsed.y;
+                                            const error = actualVal - predVal;
+                                            return `Chyba: ${error > 0 ? '+' : ''}${error}°C`;
+                                        }
+                                        return '';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Variance Basic
+            const varBasicCtx = document.getElementById('varianceBasic');
+            if (varBasicCtx) {
+                const lowVariance = [2, 1.8, 2.2, 1.9, 2.1, 2, 1.9, 2.1, 2, 1.8];
+                const highVariance = [5, 1, 4, 1, 5, 2, 4, 1, 5, 1];
+                new Chart(varBasicCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Array.from({length: 10}, (_, i) => `Student ${i+1}`),
+                        datasets: [{
+                            label: 'Nízký rozptyl (podobné známky)',
+                            data: lowVariance,
+                            borderColor: '#27ae60',
+                            tension: 0.4
+                        }, {
+                            label: 'Vysoký rozptyl (různé známky)',
+                            data: highVariance,
+                            borderColor: '#e74c3c',
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        ...chartConfig,
+                        scales: {
+                            y: {
+                                min: 0,
+                                max: 6,
+                                title: { display: true, text: 'Známka' }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Continue with other charts...
+            initializeARIMACharts();
+            initializeHoltWintersCharts();
+            initializeMLCharts();
+            initializeEvaluationCharts();
+        }
+
+        function initializeARIMACharts() {
+            // AR Chart
+            const arCtx = document.getElementById('arChart');
+            if (arCtx) {
+                const arData = [10, 12, 11.5, 13, 12.5, 14, 13.5, 15, 14.5, 16];
+                const arPred = [null, 10*0.8, 12*0.8, 11.5*0.8, 13*0.8, 12.5*0.8, 14*0.8, 13.5*0.8, 15*0.8, 14.5*0.8];
+                new Chart(arCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Array.from({length: 10}, (_, i) => `t${i+1}`),
+                        datasets: [{
+                            label: 'Skutečné hodnoty',
+                            data: arData,
+                            borderColor: '#3498db',
+                            pointRadius: 6
+                        }, {
+                            label: 'AR predikce (y(t) = 0.8×y(t-1))',
+                            data: arPred,
+                            borderColor: '#e74c3c',
+                            borderDash: [5, 5],
+                            pointRadius: 4
+                        }]
+                    },
+                    options: chartConfig
+                });
+            }
+
+            // Integration Chart
+            const integrationCtx = document.getElementById('integrationChart');
+            if (integrationCtx) {
+                const trendData = [100, 102, 104, 106, 108, 110, 112, 114, 116, 118];
+                const diffData = [null, 2, 2, 2, 2, 2, 2, 2, 2, 2];
+                new Chart(integrationCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Array.from({length: 10}, (_, i) => `t${i+1}`),
+                        datasets: [{
+                            label: 'Původní (nestacionární)',
+                            data: trendData,
+                            borderColor: '#e74c3c',
+                            yAxisID: 'y'
+                        }, {
+                            label: 'Po diferenciování (stacionární)',
+                            data: diffData,
+                            borderColor: '#27ae60',
+                            yAxisID: 'y1'
+                        }]
+                    },
+                    options: {
+                        ...chartConfig,
+                        scales: {
+                            y: {
+                                position: 'left',
+                                title: { display: true, text: 'Původní škála' }
+                            },
+                            y1: {
+                                position: 'right',
+                                title: { display: true, text: 'Diference' },
+                                grid: { drawOnChartArea: false }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // MA Chart
+            const maCtx = document.getElementById('maChart');
+            if (maCtx) {
+                const errors = [1, -2, 1.5, -1, 2, -1.5, 1, -2, 1.5, -1];
+                const maData = errors.map((err, i) => {
+                    if (i === 0) return 10 + err;
+                    return 10 + err + 0.5 * errors[i-1];
+                });
+                new Chart(maCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Array.from({length: 10}, (_, i) => `t${i+1}`),
+                        datasets: [{
+                            label: 'MA proces',
+                            data: maData,
+                            borderColor: '#9b59b6',
+                            tension: 0.4
+                        }, {
+                            label: 'Chyby εₜ',
+                            data: errors.map(e => e + 10),
+                            borderColor: '#f39c12',
+                            borderDash: [3, 3]
+                        }]
+                    },
+                    options: chartConfig
+                });
+            }
+        }
+
+        function initializeHoltWintersCharts() {
+            // Simple Exponential Smoothing
+            const simpleExpCtx = document.getElementById('simpleExpChart');
+            if (simpleExpCtx) {
+                const rawData = [10, 15, 12, 18, 14, 20, 16, 22, 18, 24, 20, 26];
+                const alpha03 = [];
+                const alpha08 = [];
+                let s03 = rawData[0], s08 = rawData[0];
+                
+                rawData.forEach((val, i) => {
+                    if (i > 0) {
+                        s03 = 0.3 * val + 0.7 * s03;
+                        s08 = 0.8 * val + 0.2 * s08;
+                    }
+                    alpha03.push(s03);
+                    alpha08.push(s08);
+                });
+
+                new Chart(simpleExpCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Array.from({length: 12}, (_, i) => i + 1),
+                        datasets: [{
+                            label: 'Původní data',
+                            data: rawData,
+                            borderColor: '#34495e',
+                            pointRadius: 4
+                        }, {
+                            label: 'α = 0.3 (klidný model)',
+                            data: alpha03,
+                            borderColor: '#3498db',
+                            tension: 0.4
+                        }, {
+                            label: 'α = 0.8 (nervózní model)',
+                            data: alpha08,
+                            borderColor: '#e74c3c',
+                            tension: 0.4
+                        }]
+                    },
+                    options: chartConfig
+                });
+            }
+
+            // Holt-Winters
+            const holtWintersCtx = document.getElementById('holtWintersChart');
+            if (holtWintersCtx) {
+                const data = generateTimeSeries(48, 0.1, 3, 0.5);
+                const trend = data.map((_, i) => 10 + i * 0.1);
+                const seasonal = Array.from({length: 48}, (_, i) => 3 * Math.sin(2 * Math.PI * i / 12));
+                
+                new Chart(holtWintersCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Array.from({length: 48}, (_, i) => i),
+                        datasets: [{
+                            label: 'Pozorovaná data',
+                            data: data,
+                            borderColor: '#2c3e50'
+                        }, {
+                            label: 'Trend',
+                            data: trend,
+                            borderColor: '#3498db',
+                            borderDash: [10, 5]
+                        }, {
+                            label: 'Sezónnost',
+                            data: seasonal.map(s => s + 12),
+                            borderColor: '#e74c3c',
+                            borderDash: [5, 5]
+                        }]
+                    },
+                    options: chartConfig
+                });
+            }
+
+            // Additive vs Multiplicative
+            const addMultCtx = document.getElementById('additiveMultiplicativeChart');
+            if (addMultCtx) {
+                const baseLevel = 10;
+                const trendComp = Array.from({length: 24}, (_, i) => i * 0.2);
+                const seasonalComp = Array.from({length: 24}, (_, i) => 3 * Math.sin(2 * Math.PI * i / 12));
+                const additiveData = trendComp.map((t, i) => baseLevel + t + seasonalComp[i]);
+                const multiplicativeData = trendComp.map((t, i) => (baseLevel + t) * (1 + seasonalComp[i] / 15));
+
+                new Chart(addMultCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Array.from({length: 24}, (_, i) => i),
+                        datasets: [{
+                            label: 'Aditivní model (Level + Trend + Seasonal)',
+                            data: additiveData,
+                            borderColor: '#27ae60',
+                            tension: 0.4
+                        }, {
+                            label: 'Multiplikativní model (Level × Trend × Seasonal)',
+                            data: multiplicativeData,
+                            borderColor: '#8e44ad',
+                            tension: 0.4
+                        }]
+                    },
+                    options: chartConfig
+                });
+            }
+        }
+
+        function initializeMLCharts() {
+            // Supervised Learning
+            const supervisedCtx = document.getElementById('supervisedChart');
+            if (supervisedCtx) {
+                const series = [120, 125, 118, 130, 135, 128, 140, 145];
+                new Chart(supervisedCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['1h', '2h', '3h', '4h', '5h', '6h', '7h', '8h'],
+                        datasets: [{
+                            label: 'Časová řada spotřeby',
+                            data: series,
+                            borderColor: '#3498db',
+                            pointBackgroundColor: series.map((_, i) => 
+                                i < 3 ? '#e74c3c' : i === 3 ? '#27ae60' : '#3498db'
+                            ),
+                            pointRadius: 8
+                        }]
+                    },
+                    options: {
+                        ...chartConfig,
+                        plugins: {
+                            ...chartConfig.plugins,
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const index = context.dataIndex;
+                                        if (index < 3) return `Vstupní feature: ${context.parsed.y} MWh`;
+                                        if (index === 3) return `Target (predikujeme): ${context.parsed.y} MWh`;
+                                        return `Hodnota: ${context.parsed.y} MWh`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Random Forest
+            const rfCtx = document.getElementById('randomForestChart');
+            if (rfCtx) {
+                const actualData = generateTimeSeries(50, 0.05, 2, 0.3);
+                const rfPredictions = actualData.map((val, i) => {
+                    if (i < 5) return null;
+                    return val + (Math.random() - 0.5) * 0.8;
+                });
+
+                new Chart(rfCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Array.from({length: 50}, (_, i) => i),
+                        datasets: [{
+                            label: 'Skutečné hodnoty',
+                            data: actualData,
+                            borderColor: '#2c3e50',
+                            pointRadius: 2
+                        }, {
+                            label: 'Random Forest predikce',
+                            data: rfPredictions,
+                            borderColor: '#27ae60',
+                            borderDash: [5, 5],
+                            pointRadius: 2
+                        }]
+                    },
+                    options: chartConfig
+                });
+            }
+
+            // Time Series Split
+            const tsSplitCtx = document.getElementById('timeSeriesSplitChart');
+            if (tsSplitCtx) {
+                new Chart(tsSplitCtx, {
+                    type: 'scatter',
+                    data: {
+                        datasets: [{
+                            label: 'Train Split 1',
+                            data: Array.from({length: 20}, (_, i) => ({x: i, y: 3})),
+                            backgroundColor: '#3498db'
+                        }, {
+                            label: 'Test Split 1',
+                            data: Array.from({length: 5}, (_, i) => ({x: i + 20, y: 3})),
+                            backgroundColor: '#e74c3c'
+                        }, {
+                            label: 'Train Split 2',
+                            data: Array.from({length: 30}, (_, i) => ({x: i, y: 2})),
+                            backgroundColor: '#3498db'
+                        }, {
+                            label: 'Test Split 2',
+                            data: Array.from({length: 5}, (_, i) => ({x: i + 30, y: 2})),
+                            backgroundColor: '#e74c3c'
+                        }, {
+                            label: 'Train Split 3',
+                            data: Array.from({length: 40}, (_, i) => ({x: i, y: 1})),
+                            backgroundColor: '#3498db'
+                        }, {
+                            label: 'Test Split 3',
+                            data: Array.from({length: 5}, (_, i) => ({x: i + 40, y: 1})),
+                            backgroundColor: '#e74c3c'
+                        }]
+                    },
+                    options: {
+                        ...chartConfig,
+                        scales: {
+                            y: {
+                                display: true,
+                                min: 0.5,
+                                max: 3.5,
+                                ticks: {
+                                    callback: function(value) {
+                                        return ['', 'Split 3', 'Split 2', 'Split 1'][value] || '';
+                                    }
+                                }
+                            },
+                            x: {
+                                title: { display: true, text: 'Časový index' }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        function initializeEvaluationCharts() {
+            // Residual Analysis
+            const residualCtx = document.getElementById('residualChart');
+            if (residualCtx) {
+                const predictions = generateTimeSeries(30, 0, 0, 0.3);
+                const actual = predictions.map(p => p + (Math.random() - 0.5) * 2);
+                const residuals = actual.map((a, i) => a - predictions[i]);
+
+                new Chart(residualCtx, {
+                    type: 'scatter',
+                    data: {
+                        datasets: [{
+                            label: 'Reziduá (Skutečná - Predikovaná)',
+                            data: residuals.map((r, i) => ({x: i, y: r})),
+                            backgroundColor: residuals.map(r => Math.abs(r) > 1 ? '#e74c3c' : '#3498db'),
+                            pointRadius: 4
+                        }]
+                    },
+                    options: {
+                        ...chartConfig,
+                        scales: {
+                            x: { title: { display: true, text: 'Časový index' }},
+                            y: { 
+                                title: { display: true, text: 'Reziduum' },
+                                // Add horizontal line at y=0
+                                grid: {
+                                    color: function(context) {
+                                        return context.tick.value === 0 ? '#e74c3c' : '#e0e0e0';
+                                    },
+                                    lineWidth: function(context) {
+                                        return context.tick.value === 0 ? 2 : 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // Interactive functions
+        function updateStationarity() {
+            const trend = parseFloat(document.getElementById('trendSlider').value);
+            const noise = parseFloat(document.getElementById('noiseSlider').value);
+            
+            const stationaryData = generateTimeSeries(50, 0, 1, noise);
+            const nonStationaryData = generateTimeSeries(50, trend, 1, noise);
+            
+            const ctx = document.getElementById('stationarityDemo');
+            if (ctx && window.stationarityChart) {
+                window.stationarityChart.destroy();
+            }
+            
+            window.stationarityChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({length: 50}, (_, i) => i),
+                    datasets: [{
+                        label: 'Stacionární řada',
+                        data: stationaryData,
+                        borderColor: '#27ae60',
+                        tension: 0.4
+                    }, {
+                        label: 'Nestacionární řada',
+                        data: nonStationaryData,
+                        borderColor: '#e74c3c',
+                        tension: 0.4
+                    }]
+                },
+                options: chartConfig
+            });
+
+            // Mock ADF test result
+            const adfResult = document.getElementById('adfResult');
+            if (adfResult) {
+                const isStationary = trend < 0.5;
+                const pValue = isStationary ? 0.01 : 0.15;
+                adfResult.innerHTML = `
+                    <strong>ADF Test výsledek:</strong><br>
+                    p-hodnota: ${pValue}<br>
+                    <strong>${isStationary ? 
+                        '✅ Data JSOU stacionární (p ≤ 0.05)' : 
+                        '❌ Data NEJSOU stacionární (p > 0.05)'
+                    }</strong>
+                `;
+                adfResult.style.background = isStationary ? '#e8f5e8' : '#ffeaea';
+            }
+        }
+
+        function updateFeatureDemo() {
+            const featureType = document.getElementById('featureType').value;
+            const ctx = document.getElementById('featureDemo');
+            
+            if (window.featureChart) {
+                window.featureChart.destroy();
+            }
+            
+            const baseData = [120, 125, 118, 130, 135, 128, 122, 138, 142, 135, 140, 145];
+            let featureData, featureLabel, yAxisId = 'y';
+            
+            switch(featureType) {
+                case 'lag':
+                    featureData = [null, ...baseData.slice(0, -1)];
+                    featureLabel = 'Lag-1 feature (hodnota před 1h)';
+                    break;
+                case 'rolling':
+                    featureData = baseData.map((_, i) => {
+                        if (i < 2) return null;
+                        return baseData.slice(Math.max(0, i-2), i+1).reduce((a, b) => a + b) / 3;
+                    });
+                    featureLabel = 'Rolling mean (průměr z 3h)';
+                    break;
+                case 'cyclic':
+                    featureData = baseData.map((_, i) => Math.sin(2 * Math.PI * i / 24));
+                    featureLabel = 'Cyklický příznak (sin hodina/24)';
+                    yAxisId = 'y1';
+                    break;
+            }
+            
+            const datasets = [{
+                label: 'Původní spotřeba energie',
+                data: baseData,
+                borderColor: '#2c3e50',
+                yAxisID: 'y'
+            }, {
+                label: featureLabel,
+                data: featureData,
+                borderColor: '#e74c3c',
+                yAxisID: yAxisId
+            }];
+
+            const scales = featureType === 'cyclic' ? {
+                y: {
+                    position: 'left',
+                    title: { display: true, text: 'MWh' }
+                },
+                y1: {
+                    position: 'right',
+                    title: { display: true, text: 'Cyklická hodnota' },
+                    min: -1,
+                    max: 1,
+                    grid: { drawOnChartArea: false }
+                }
+            } : chartConfig.scales;
+            
+            window.featureChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({length: 12}, (_, i) => `${i+1}h`),
+                    datasets: datasets
+                },
+                options: {
+                    ...chartConfig,
+                    scales: scales
+                }
+            });
+        }
+
+        function generateErrorExample(type) {
+            let actual, predicted;
+            
+            switch(type) {
+                case 'normal':
+                    actual = [100, 105, 110, 108, 115, 120, 118, 125];
+                    predicted = [98, 107, 112, 106, 117, 118, 120, 123];
+                    break;
+                case 'outlier':
+                    actual = [100, 105, 110, 108, 115, 120, 118, 125];
+                    predicted = [101, 104, 109, 130, 114, 119, 117, 124]; // One big error
+                    break;
+                case 'small':
+                    actual = [10, 12, 11, 13, 15, 14, 16, 18];
+                    predicted = [9, 13, 10, 14, 16, 13, 17, 17];
+                    break;
+            }
+
+            // Calculate metrics
+            const errors = actual.map((a, i) => Math.abs(a - predicted[i]));  
+            const mae = errors.reduce((a, b) => a + b) / errors.length;
+            const rmse = Math.sqrt(errors.map(e => e * e).reduce((a, b) => a + b) / errors.length);
+            const mape = actual.map((a, i) => Math.abs((a - predicted[i]) / a) * 100)
+                              .reduce((a, b) => a + b) / actual.length;
+
+            // Update chart
+            const ctx = document.getElementById('metricsComparison');
+            if (window.metricsChart) {
+                window.metricsChart.destroy();
+            }
+            
+            window.metricsChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({length: actual.length}, (_, i) => `t${i+1}`),
+                    datasets: [{
+                        label: 'Skutečné hodnoty',
+                        data: actual,
+                        borderColor: '#2c3e50',
+                        pointRadius: 6
+                    }, {
+                        label: 'Predikované hodnoty',
+                        data: predicted,
+                        borderColor: '#e74c3c',
+                        borderDash: [5, 5],
+                        pointRadius: 6
+                    }]
+                },
+                options: chartConfig
+            });
+
+            // Update metric values
+            document.getElementById('maeValue').textContent = mae.toFixed(2);
+            document.getElementById('rmseValue').textContent = rmse.toFixed(2);
+            document.getElementById('mapeValue').textContent = mape.toFixed(1) + '%';
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+            updateStationarity();
+            updateFeatureDemo();
+            generateErrorExample('normal');
+        });
+    </script>
+</body>
+</html>

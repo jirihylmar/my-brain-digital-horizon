@@ -1,14 +1,5 @@
 # 🔮 Datasety pro prediktivní modelování a business aplikace forecastingu
 
-## 📊 Přehled datasetů
-
-Vytvořil jsem **2 specializované datasety** zaměřené na praktické osvojení forecasting metod a jejich business implementaci:
-
-1. **🔌 Energetická spotřeba** - pro **metody a techniky**
-2. **💼 Business KPI** - pro **automatizaci a aplikace**
-
----
-
 ## 1. ⚡ **Dataset: Energetická spotřeba (Metody)**
 **Soubor:** `energy_consumption_timeseries.tsv`
 
@@ -58,31 +49,6 @@ Postupný nárůst spotřeby v čase
 #### **✅ Noise a variabilita:**
 Přirozená variabilita pro testování robustnosti modelů
 
-### 🛠️ **Doporučené metody k testování:**
-
-#### **Statistické přístupy:**
-```python
-# ARIMA modely
-ARIMA(1,1,1) pro základní trend
-SARIMA(1,1,1)(1,1,1,24) pro sezónnost
-
-# Exponenciální vyhlazování
-Simple Exponential Smoothing
-Holt-Winters (additive/multiplicative)
-```
-
-#### **Machine Learning:**
-```python
-# Sklearn modely
-RandomForestRegressor
-GradientBoostingRegressor
-LinearRegression s polynomial features
-
-# Specialized libraries
-Prophet (Facebook)
-LSTM neural networks
-```
-
 #### **Evaluační metriky:**
 - **MAE** - Mean Absolute Error
 - **MAPE** - Mean Absolute Percentage Error  
@@ -125,52 +91,7 @@ Dataset navržen pro **praktické business scénáře** s důrazem na ROI, monit
 - **cash_flow_impact** - Dopad na cash flow
 - **seasonal_multiplier** - Sezónní multiplikátor
 
-### 🚀 **Business aplikace:**
-
-#### **📊 Predikce prodejů:**
-```python
-# Multi-step forecasting
-revenue_forecast = model.predict(horizon=30)
-confidence_intervals = model.predict_intervals()
-```
-
-#### **🔔 Automatizované alerting:**
-```python
-# Alert system implementation
-if predicted_revenue < alert_threshold_revenue:
-    send_alert("Revenue below threshold")
-    
-if predicted_churn > alert_threshold_churn:
-    trigger_retention_campaign()
-```
-
-#### **💡 Optimalizace zásob:**
-```python
-# Automated reordering
-if reorder_trigger == 1:
-    optimal_order_quantity = calculate_eoq(demand_forecast)
-    place_order(optimal_order_quantity)
-```
-
-#### **📈 ROI monitoring:**
-```python
-# Marketing ROI tracking
-roi_forecast = predict_roi(marketing_spend_planned)
-if roi_forecast < minimum_roi:
-    adjust_marketing_budget()
-```
-
-#### **💰 Finanční plánování:**
-```python
-# Cash flow forecasting
-cash_flow_30d = forecast_cash_flow(
-    revenue_forecast, 
-    predicted_costs,
-    seasonal_adjustments
-)
-```
-
----
+## 🚀 **Business aplikace:**
 
 ## 🎓 **Cvičební scénáře**
 
@@ -248,77 +169,6 @@ cash_flow_30d = forecast_cash_flow(
    - Forecast visualization
    - Business intelligence reports
 
----
-
-## 💻 **Technická implementace**
-
-### **Python knihovny:**
-
-#### **Statistické forecasting:**
-```python
-# Core libraries
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Statistical forecasting
-from statsmodels.tsa.arima.model import ARIMA
-from statsmodels.tsa.holtwinters import ExponentialSmoothing
-from statsmodels.tsa.seasonal import seasonal_decompose
-
-# Facebook Prophet
-from prophet import Prophet
-```
-
-#### **Machine Learning:**
-```python
-# Sklearn
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import TimeSeriesSplit
-from sklearn.metrics import mean_absolute_error
-
-# Deep learning
-import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense
-```
-
-#### **Business applications:**
-```python
-# Data processing
-import pandas as pd
-from datetime import datetime, timedelta
-
-# Visualization and dashboards
-import plotly.graph_objects as go
-import plotly.express as px
-import streamlit as st
-
-# Alerts and monitoring
-import smtplib
-from email.mime.text import MIMEText
-```
-
-### **R knihovny:**
-```r
-# Core forecasting
-library(forecast)
-library(tseries)
-library(seasonal)
-
-# Advanced methods  
-library(prophet)
-library(modeltime)
-library(timetk)
-
-# Business applications
-library(shiny)
-library(DT)
-library(plotly)
-```
-
----
-
 ## 📋 **Praktické úkoly**
 
 ### **Dataset 1 (Energie) - Metodické cvičení:**
@@ -354,8 +204,6 @@ library(plotly)
 - [ ] Model monitoring dashboard
 - [ ] Automated retraining
 - [ ] Business intelligence reports
-
----
 
 ## 🎯 **Učební výstupy**
 

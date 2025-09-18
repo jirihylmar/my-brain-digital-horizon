@@ -1,0 +1,34 @@
+flowchart TD
+    Start([Začátek]) --> A[Identifikace firemního problému]
+    A --> B[Návrh projektu zaměstnancem]
+    B --> C{Formální kontrola}
+    C -->|Ne| D[Vrácení k dopracování]
+    D --> B
+    C -->|Ano| E[Posouzení lektory]
+    E --> F{Technická proveditelnost}
+    F -->|Ne| G[Konzultace s odbornou podporou]
+    G --> B
+    F -->|Ano| H[Zařazení projektu do seznamu]
+    H --> I[Prezentace vedení]
+    I --> J{Schválení vedením}
+    J -->|Ne| K[Archivace návrhu]
+    K --> End([Konec])
+    J -->|Ano| L[Prioritizace projektů]
+    L --> M[Přidělení rozpočtu]
+    M --> N[Zahájení realizace]
+    N --> O[Spolupráce s odbornou podporou]
+    O --> P[Vývoj řešení]
+    P --> Q[Testování a validace]
+    Q --> R{Splňuje požadavky?}
+    R -->|Ne| P
+    R -->|Ano| S[Finální dokumentace]
+    S --> T[Implementace do provozu]
+    T --> U[Monitoring a vyhodnocení]
+    U --> End
+
+    style A fill:#e1f5fe
+    style B fill:#e1f5fe
+    style E fill:#fff3e0
+    style I fill:#f3e5f5
+    style N fill:#e8f5e9
+    style T fill:#e8f5e9
